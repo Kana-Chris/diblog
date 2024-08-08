@@ -18,6 +18,10 @@
    font-size:1vw;
    
 }
+.mainNav ul li a{
+	color:white;
+}
+
 footer{
     margin:0 auto;
     margin-top:1210px;
@@ -28,6 +32,15 @@ footer{
     line-height:50px;
     text-align:center;
 
+}
+table{
+	margin:0 auto;
+	margin-top:10px;
+	width:50%;
+	text-align: center;
+}
+table tr{
+	line-height: 40px;
 }
 .main-container{
     display:flex;

@@ -6,6 +6,15 @@
 <struts>
   <constant name="struts.devMode" value="true"/>
     <package name="com.diworksdev.diblog.action" extends="struts-default">
+    
+      <action name="RegistAction" class="com.diworksdev.diblog.action.RegistAction" method="execute">
+        <result name="success">regist.jsp</result>
+      </action>
+      
+      <action name="RegistConfirmAction" class="com.diworksdev.diblog.action.RegistConfirmAction" method="execute">
+        <result name="success">registComfirm.jsp</result>
+      </action>
+    
     </package>
     
 </struts>
