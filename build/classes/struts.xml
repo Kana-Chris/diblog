@@ -12,7 +12,8 @@
       </action>
       
       <action name="RegistConfirmAction" class="com.diworksdev.diblog.action.RegistConfirmAction" method="execute">
-        <result name="success">registComfirm.jsp</result>
+        <result name="success">regist_confirm.jsp</result>
+        <result name="error">regist.jsp</result>
       </action>
     
     </package>
