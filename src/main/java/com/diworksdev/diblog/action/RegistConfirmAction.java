@@ -22,12 +22,12 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 	
 	String result = ERROR;
 	
-	public String message="";
+	private int errorFlg;
 	public Map<String,Object> session;
 	
 	public String execute() {
 		//空チェック
-		if(!(family_name.equals(""))
+		if(!(family_name.equals(""))  
 			&&!(last_name.equals(""))
 			&&!(family_name_kana.equals(""))
 			&&!(last_name_kana.equals(""))
@@ -52,43 +52,11 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 				session.put("address_1", address_1);
 				session.put("address_2",address_2);
 				session.put("authority",authority);
-			
+
 			}else {
+				result = ERROR;
+				setErrorFlg(1);
 				
-				if(family_name=="") {
-					setMessage("名前（姓）が未入力です。");
-				}
-				/*if(last_name=="") {
-					message = message +"名前（名）が未入力です。<br>";
-				}
-				if(family_name_kana=="") {
-					message = message +",カナ（姓）が未入力です。<br>";
-				}
-				if(last_name_kana=="") {
-					message = message +",カナ（名）が未入力です。<br>";
-				}
-				if(mail=="") {
-					message = message + ",メールアドレスが未入力です。<br>";
-				}
-				if(password=="") {
-					message = message + ",パスワードが未入力です。<br>";
-				}
-				if(postal_code=="") {
-					message = message + "パスワードが未入力です。<br>";
-				}
-			    if(prefecture=="") {
-			    	message = message + "住所（都道府県）が選択されていません。<br>";
-			    }
-			    if(address_1=="") {
-			    	message = message + "住所(市区町村）が未入力です。<br>";
-			    }
-			    if(address_2=="") {
-			    	message = message + "番地が未入力です。";
-			    }*/
-			    
-			    result = ERROR;
-			    System.out.println(getMessage());
-			 
 			}
 		
 		return result;
@@ -190,12 +158,12 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-	public String getMessage() {
-		return message;
+	public int getErrorFlg() {
+		return errorFlg;
 	}
 	
-	public void setMessage(String message) {
-		this.message = message;
+	public void setErrorFlg(int errorFlg) {
+		this.errorFlg = errorFlg;
 	}
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
