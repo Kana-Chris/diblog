@@ -26,10 +26,11 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 	
 	private String resultMessage; //登録結果のメッセージ
 	
-	String result = ERROR;
+	String result;
 	
 	public String execute() throws SQLException{
 		
+		result = SUCCESS;
 		RegistCompleteDAO dao = new RegistCompleteDAO();
 		
 		int daoResult;

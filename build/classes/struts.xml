@@ -16,6 +16,10 @@
         <result name="error">regist.jsp</result>
       </action>
     
+      <action name="RegistCompleteAction" class="com.diworksdev.diblog.action.RegistCompleteAction" method="execute">
+        <result name="success">regist_complete.jsp</result>
+        <result name="error">regist.jsp</result>
+      </action>
     </package>
     
 </struts>

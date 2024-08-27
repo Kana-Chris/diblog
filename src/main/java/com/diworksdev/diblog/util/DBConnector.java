@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class DBConnector {
 	private String driverName = "org.mariadb.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost/dibrog";	
+	private String url = "jdbc:mysql://localhost/diblog";	
 	private String user = "root";
 	private String password = "";
 	

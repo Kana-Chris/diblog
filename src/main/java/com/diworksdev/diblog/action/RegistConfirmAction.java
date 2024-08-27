@@ -26,6 +26,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 	
 	public String execute() {
+		result=SUCCESS;
 		//空チェック
 		if(!(family_name.equals(""))  
 			&&!(last_name.equals(""))
@@ -38,7 +39,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 			&&!(address_1.equals(""))
 			&&!(address_2.equals(""))
 			){
-				result=SUCCESS;
+				
 				
 				session.put("family_name", family_name);
 				session.put("last_name", last_name);
@@ -54,7 +55,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 				session.put("authority",authority);
 
 			}else {
-				result = ERROR;
+				result=ERROR;
 				setErrorFlg(1);
 				
 			}

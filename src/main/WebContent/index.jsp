@@ -8,11 +8,10 @@
         <meta charset="UTF-8">
         <title>D.I.Blog</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
         <script>
             $(document).ready(function(){
             $('.abc').bxSlider({
@@ -123,6 +122,6 @@
                 Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
           
         </footer>
-        <script type="text/javascript" src="script.js"></script>
+        
     </body>
 </html>

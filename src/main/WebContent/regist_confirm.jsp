@@ -33,68 +33,70 @@
     </header>
     
     <main>
-      <s:form>
-		  <table>
-		    <tr>
-		      <td>名前（姓）</td>
-		      <td><s:property value="family_name"/></td>
-		    </tr>
-	        <tr>
-	          <td>名前（名）</td>
-	          <td><s:property value="last_name"/></td>
-	        </tr>
-	        <tr>
-	          <td>カナ（姓）</td>
-	          <td><s:property value="family_name_kana"/></td>
-	        </tr>
-	        <tr>
-	          <td>カナ（名）</td>
-	          <td><s:property value="last_name_kana"/></td>
-	        </tr>
-	        <tr>
-	          <td>メールアドレス</td>
-	          <td><s:property value="mail"/></td>
-	        </tr>
-	        <tr>
-	          <td>パスワード</td>
-	          <td><s:property value="password"/></td>
-	        </tr>
-	        <tr>
-	         <td>性別</td>
-	         <td>
-	         <s:property value="gender"/>
-	         </td>
-	        </tr>
-	        <tr>
-	          <td>郵便番号</td>
-	          <td><s:property value="postal_code"/></td>
-	        </tr>
-	        <tr>
-	          <td>住所（都道府県）</td>
-	          <td>
-	          <s:property value="prefecture"/>
-	          </td>
-	        </tr>
-	        <tr>
-	          <td>住所（市区町村）</td>
-	          <td><s:property value="address_1"/></td>
-	        </tr>
-	        <tr>
-	          <td>住所（番地）</td>
-	          <td><s:property value="address_2"/></td>
-	        </tr>
-	        <tr>
-	          <td>アカウント権限</td>
-	          <td>
-	            <s:property value="authority"/>
-	          </td>
-	        </tr>
-	        <tr>
-	          <td><input type="button" value="前に戻る" onclick="submitAction('RegistAction')"/></td>
-	          <td><input type="button" value="登録する" onclick="submitAction('RegistCompleteAction')"/></td>
-	        </tr>
-	        </table>
-	    </s:form>
+      <div class="form">
+	      <s:form>
+			  <table>
+			    <tr>
+			      <td>名前（姓）</td>
+			      <td><s:property value="family_name"/></td>
+			    </tr>
+		        <tr>
+		          <td>名前（名）</td>
+		          <td><s:property value="last_name"/></td>
+		        </tr>
+		        <tr>
+		          <td>カナ（姓）</td>
+		          <td><s:property value="family_name_kana"/></td>
+		        </tr>
+		        <tr>
+		          <td>カナ（名）</td>
+		          <td><s:property value="last_name_kana"/></td>
+		        </tr>
+		        <tr>
+		          <td>メールアドレス</td>
+		          <td><s:property value="mail"/></td>
+		        </tr>
+		        <tr>
+		          <td>パスワード</td>
+		          <td><s:property value="password"/></td>
+		        </tr>
+		        <tr>
+		         <td>性別</td>
+		         <td>
+		         <s:property value="gender"/>
+		         </td>
+		        </tr>
+		        <tr>
+		          <td>郵便番号</td>
+		          <td><s:property value="postal_code"/></td>
+		        </tr>
+		        <tr>
+		          <td>住所（都道府県）</td>
+		          <td>
+		          <s:property value="prefecture"/>
+		          </td>
+		        </tr>
+		        <tr>
+		          <td>住所（市区町村）</td>
+		          <td><s:property value="address_1"/></td>
+		        </tr>
+		        <tr>
+		          <td>住所（番地）</td>
+		          <td><s:property value="address_2"/></td>
+		        </tr>
+		        <tr>
+		          <td>アカウント権限</td>
+		          <td>
+		            <s:property value="authority"/>
+		          </td>
+		        </tr>
+		        <tr>
+		          <td><input type="button" value="前に戻る" onclick="submitAction('RegistAction')"/></td>
+		          <td><input type="button" value="登録する" onclick="submitAction('RegistCompleteAction')"/></td>
+		        </tr>
+		      </table>
+		  </s:form>
+	   </div>
 	 </main>
 	 
 	 <footer>

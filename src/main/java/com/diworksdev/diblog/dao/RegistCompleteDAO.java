@@ -32,11 +32,8 @@ public class RegistCompleteDAO{
 		}else if(authority.equals("管理者")){
 			intAuthority = 1;
 		}
-		String sql ="INSERT INTO user_info (family_name,String last_name,"
-			+ "String family_name_kana,String last_name_kana,String mail,"
-			+ "String password,int gender,String postal_code,"
-			+ "String prefecture,String address_1,String address_2,int authority) "
-			+ "values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql ="INSERT INTO user_info (family_name,last_name,family_name_kana,last_name_kana,mail,password,"
+				+ "gender,postal_code,prefecture,address_1,address_2,authority) values(?,?,?,?,?,?,?,?,?,?,?,?)";
 	
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
