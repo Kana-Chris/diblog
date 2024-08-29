@@ -67,27 +67,27 @@
 		  <table>
 		    <tr>
 		      <td>名前（姓）</td>
-		      <td><input type="text" name="family_name" pattern="[^\x20-\x7E]*"/></td>
+		      <td><input type="text" name="family_name" pattern="[^\x20-\x7E]*" maxlength="10" title="ひらがな、漢字で入力してください"/></td>
 		    </tr>
 	        <tr>
 	          <td>名前（名）</td>
-	          <td><input type="text" name="last_name" pattern="[^\x20-\x7E]*"/><td>
+	          <td><input type="text" name="last_name" pattern="[^\x20-\x7E]*"　pattern="[^\x20-\x7E]*" maxlength="10" title="ひらがな、漢字で入力してください"/><td>
 	        </tr>
 	        <tr>
 	          <td>カナ（姓）</td>
-	          <td><input type="text" name="family_name_kana" pattern="[\u30A1-\u30F6]*"/></td>
+	          <td><input type="text" name="family_name_kana" pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>カナ（名）</td>
-	          <td><input type="text" name="last_name_kana" pattern="[\u30A1-\u30F6]*"/></td>
+	          <td><input type="text" name="last_name_kana" pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>メールアドレス</td>
-	          <td><input type="text" name="mail"/></td>
+	          <td><input type="text" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="10"/></td>
 	        </tr>
 	        <tr>
 	          <td>パスワード</td>
-	          <td><input type="text" name="password"/></td>
+	          <td><input type="text" name="password" pattern="^[0-9A-Za-z]+$" maxlength="10" title="半角英数字で入力してください"/></td>
 	        </tr>
 	        <tr>
 	         <td>性別</td>
@@ -98,7 +98,7 @@
 	        </tr>
 	        <tr>
 	          <td>郵便番号</td>
-	          <td><input type="text" name="postal_code"/></td>
+	          <td><input type="text" name="postal_code"　pattern="[0-9]{7}" title="半角数字で入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>住所（都道府県）</td>
@@ -124,11 +124,11 @@
 	        </tr>
 	        <tr>
 	          <td>住所（市区町村）</td>
-	          <td><input type="text" name="address_1"/></td>
+	          <td><input type="text" name="address_1" pattern="[ぁ-んァ-ン０-９0-9\-― 　]+" maxlength="10" title="ハイフン以外の記号は使えません"/></td>
 	        </tr>
 	        <tr>
 	          <td>住所（番地）</td>
-	          <td><input type="text" name="address_2"/></td>
+	          <td><input type="text" name="address_2" pattern="[ぁ-んァ-ン０-９0-9\-― 　]+" maxlength="100" title="ハイフン以外の記号は使えません"/></td>
 	        </tr>
 	        <tr>
 	          <td>アカウント権限</td>
