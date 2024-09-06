@@ -27,7 +27,20 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 	
 	public String execute() {
 		result=SUCCESS;
-		//空チェック
+
+		session.put("family_name", family_name);
+		session.put("last_name", last_name);
+		session.put("family_name_kana", family_name_kana);
+		session.put("last_name_kana", last_name_kana);
+		session.put("mail",mail);
+		session.put("password", password);
+		session.put("gender",gender);
+		session.put("postal_code", postal_code);
+		session.put("prefecture", prefecture);
+		session.put("address_1", address_1);
+		session.put("address_2",address_2);
+		session.put("authority",authority);
+		
 		if(!(family_name.equals(""))  
 			&&!(last_name.equals(""))
 			&&!(family_name_kana.equals(""))
@@ -39,20 +52,8 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 			&&!(address_1.equals(""))
 			&&!(address_2.equals(""))
 			){
+				setErrorFlg(0);
 				
-				
-				session.put("family_name", family_name);
-				session.put("last_name", last_name);
-				session.put("family_name_kana", family_name_kana);
-				session.put("last_name_kana", last_name_kana);
-				session.put("mail",mail);
-				session.put("password", password);
-				session.put("gender",gender);
-				session.put("postal_code", postal_code);
-				session.put("prefecture", prefecture);
-				session.put("address_1", address_1);
-				session.put("address_2",address_2);
-				session.put("authority",authority);
 
 			}else {
 				result=ERROR;
