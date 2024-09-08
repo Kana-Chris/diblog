@@ -98,11 +98,16 @@
 	        <tr>
 	         <td>性別</td>
 	         <td>
-	         
-	         <input type="radio" value="男" name="gender"
-	         <%if((session.getAttribute("gender").toString()).equals("男")){out.println("checked='checked'");}%>/>男&emsp;
-	         <input type="radio" value="女" name="gender" 
-	         <%if((session.getAttribute("gender").toString()).equals("女")){out.println("checked='checked'");}%>/>女
+	         <%int gender =0;
+				if(session.getAttribute("gender")!=null){ 
+	         		if(session.getAttribute("gender").toString().equals("男")){
+	         			gender = 0;
+	         		}else{gender =1;
+	         		}
+				}
+	         %>
+	         <input type="radio" value="男" name="gender" <%if(gender==0){out.print("checked='checked'");}%>"/>男&emsp;
+	         <input type="radio" value="女" name="gender" <%if(gender==1){out.print("checked='checked'");}%>"/>女
 	         </td>
 	        </tr>
 	        <tr>

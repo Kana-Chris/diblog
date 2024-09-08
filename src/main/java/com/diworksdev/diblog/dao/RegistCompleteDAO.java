@@ -30,6 +30,8 @@ public class RegistCompleteDAO{
 			intGender = 1;
 		}
 		
+		intPostal_code = Integer.parseInt(postal_code);
+		
 		if(authority.equals("一般")) {
 			intAuthority = 0;
 		}else if(authority.equals("管理者")){
