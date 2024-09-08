@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.diworksdev.diblog.util.DBConnector;
 import com.diworksdev.diblog.util.DateUtil;
+import com.diworksdev.diblog.util.PassUtil;
 
 public class RegistCompleteDAO{
 	//gender,authority をString からint型にしておく
@@ -12,11 +13,13 @@ public class RegistCompleteDAO{
 	private int intGender;
 	private int intPostal_code;
 	private int intAuthority;
+	private String hash;
 	
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 	
 	DateUtil dateUtil = new DateUtil();
+	PassUtil passUtil = new PassUtil();
 	
 	public int regist(String family_name,String last_name,
 					  String family_name_kana,String last_name_kana,
@@ -29,6 +32,8 @@ public class RegistCompleteDAO{
 		}else if(gender.equals("女")) {
 			intGender = 1;
 		}
+		
+		hash = passUtil.password_hash(password);
 		
 		intPostal_code = Integer.parseInt(postal_code);
 		
@@ -48,7 +53,7 @@ public class RegistCompleteDAO{
 			preparedStatement.setString(3, family_name_kana);
 			preparedStatement.setString(4, last_name_kana);
 			preparedStatement.setString(5, mail);
-			preparedStatement.setString(6, password);
+			preparedStatement.setString(6, hash);
 			preparedStatement.setInt(7, intGender);
 			preparedStatement.setInt(8,intPostal_code);
 			preparedStatement.setString(9, prefecture);
