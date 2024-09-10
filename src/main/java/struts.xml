@@ -7,6 +7,10 @@
   <constant name="struts.devMode" value="true"/>
     <package name="com.diworksdev.diblog.action" extends="struts-default">
     
+      <action name="HomeAction" class="com.diworksdev.diblog.action.HomeAction" method="execute">
+        <result name="success">index.jsp</result>
+      </action>
+    
       <action name="RegistAction" class="com.diworksdev.diblog.action.RegistAction" method="execute">
         <result name="success">regist.jsp</result>
       </action>

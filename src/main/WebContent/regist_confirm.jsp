@@ -27,7 +27,7 @@
                   <li>登録フォーム</li>
                   <li>問い合わせ</li>
                   <li>その他</li>
-                  <li>アカウント登録</li>
+                  <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
               </ul>
           </nav>
     </header>
@@ -100,6 +100,9 @@
 	 </main>
 	 
 	 <footer>
-	 </footer>
+            
+                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
+          
+    </footer>
   </body>
 </html>
