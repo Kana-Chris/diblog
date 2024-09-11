@@ -68,12 +68,12 @@
 		    <tr>
 		      <td>名前（姓）</td>
 		      <td><input type="text" name="family_name" value="${family_name}"
-		      pattern="[^\x20-\x7E]*" maxlength="10" title="ひらがな、漢字で入力してください"/></td>
+		      pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/></td>
 		    </tr>
 	        <tr>
 	          <td>名前（名）</td>
 	          <td><input type="text" name="last_name" value="${last_name}"  
-	          pattern="[^\x20-\x7E]*"　pattern="[^\x20-\x7E]*" maxlength="10" title="ひらがな、漢字で入力してください"/><td>
+	          pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/><td>
 	        </tr>
 	        <tr>
 	          <td>カナ（姓）</td>
@@ -87,8 +87,8 @@
 	        </tr>
 	        <tr>
 	          <td>メールアドレス</td>
-	          <td><input type="text" name="mail" value="${mail}"
-	          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="10"/></td>
+	          <td><input type="email" name="mail" value="${mail}"
+	          pattern=".+\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]" maxlength="100"/></td>
 	        </tr>
 	        <tr>
 	          <td>パスワード</td>
@@ -141,12 +141,12 @@
 	        <tr>
 	          <td>住所（市区町村）</td>
 	          <td><input type="text" name="address_1" value="${address_1}"
-	          pattern="[^!#$%&'()\*\+\.,\/:;<=>?@\[\\\]^_`{|}~]+" maxlength="10" title="ハイフン以外の記号は使えません"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" maxlength="10" title="ハイフン以外の記号は使えません"/></td>
 	        </tr>
 	        <tr>
 	          <td>住所（番地）</td>
 	          <td><input type="text" name="address_2" value="${address_2}"
-	          pattern="[^!#$%&'()\*\+\.,\/:;<=>?@\[\\\]^_`{|}~]+" maxlength="100" title="ハイフン以外の記号は使えません"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" maxlength="100" title="ハイフン以外の記号は使えません"/></td>
 	        </tr>
 	        <tr>
 	          <td>アカウント権限</td>
