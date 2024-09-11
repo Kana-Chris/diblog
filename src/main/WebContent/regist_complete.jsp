@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
-  <title>登録完了画面</title>
+  　　<meta charset="UTF-8">
+  　　<title>登録完了画面</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
     <script type="text/javascript">
@@ -33,9 +33,25 @@
     </header>
     
     <main>
-    <h2 class="center"><s:property value="resultMessage"/></h2>
-    <input type="button" value="TOPへ戻る" onclick="submitAction('HomeAction')"/>
+      <div class="message">
+      <s:if test="messageFlg==0">
+      <h2 class="font_red">
+      <s:property value="resultMessage"/>
+      </h2>
+     
+      </s:if>
+      
+      <s:if test="messageFlg==1">
+        <span style="color:red">
+          <h2 class="font_red"><s:property value="resultMessage"/></h2>
+        </span>
+      </s:if>
+      
+      <s:form>
+        <button onclick="submitAction('HomeAction')">TOPに戻る</button>
+      </s:form>
     </main>
+    </div>
     
     <footer>
             

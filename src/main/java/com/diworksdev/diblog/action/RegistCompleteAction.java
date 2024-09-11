@@ -23,10 +23,11 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 	private String address_2;
 	private String authority;
 	private Map<String,Object> session;
+	private int messageFlg;
 	
 	private String resultMessage; //登録結果のメッセージ
 	
-	String result;
+	public String result;
 	
 	public String execute() throws SQLException{
 		
@@ -50,8 +51,10 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 			);	
 		
 		if(daoResult==1) {
+			messageFlg=0;
 			setResultMessage("登録完了しました");
 		}else {
+			messageFlg=1;
 			setResultMessage("エラーが発生したためアカウント登録できません。");
 		}
 		return result;
@@ -161,6 +164,14 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 	
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+	
+	public int getMessageFlg() {
+		return messageFlg;
+	}
+	
+	public void setMessageFlg(int messageFlg) {
+		this.messageFlg = messageFlg;
 	}
 	
 	

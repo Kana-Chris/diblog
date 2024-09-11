@@ -112,9 +112,10 @@ h2 .center{
     border-bottom: 2px solid gray;
 }
 
-#error{
+.message{
 	margin:0 auto;
 	margin-top:10px;
 	width:80%;
 	text-align: center;
 }
+

@@ -28,7 +28,7 @@
     
     <main>
       <!-- エラーメッセージ表示 -->
-      <div id="error">
+      <div class="message">
       <s:if test="errorFlg==1">
         <s:if test="family_name==''">
         名前（姓）が未入力です。<br>
