@@ -88,7 +88,7 @@
 	        <tr>
 	          <td>メールアドレス</td>
 	          <td><input type="email" name="mail" value="${mail}"
-	          pattern=".+\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]" maxlength="100"/></td>
+	          pattern="/^[a-zA-Z0-9\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" maxlength="100"/></td>
 	        </tr>
 	        <tr>
 	          <td>パスワード</td>
@@ -141,20 +141,27 @@
 	        <tr>
 	          <td>住所（市区町村）</td>
 	          <td><input type="text" name="address_1" value="${address_1}"
-	          pattern="^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" maxlength="10" title="ハイフン以外の記号は使えません"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、カタカナ、漢字、数字で入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>住所（番地）</td>
 	          <td><input type="text" name="address_2" value="${address_2}"
-	          pattern="^[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" maxlength="100" title="ハイフン以外の記号は使えません"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー]*$" maxlength="100" title="ひらがな、カタカナ、漢字、数字で入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>アカウント権限</td>
 	          <td>
+	            <%int authority =0;
+	            if(session.getAttribute("authority")!=null){
+	            	if(session.getAttribute("authority").toString().equals("一般")){
+	            		authority = 0;
+	            	}else{
+	            		authority = 1;
+	            	}
+	            } %>
 	            <select name="authority">
-	           	  <option>${authority}</option>
-	              <option>一般</option>
-	              <option>管理者</option>
+	              <option <%if(authority==0){out.print("selected");}%>>一般</option>
+	              <option <%if(authority==1){out.print("selected");}%>>管理者</option>
 	            </select>
 	          </td>
 	        </tr>
