@@ -87,8 +87,9 @@
 	        </tr>
 	        <tr>
 	          <td>メールアドレス</td>
-	          <td><input type="email" name="mail" value="${mail}"
-	          pattern="/^[a-zA-Z0-9\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" maxlength="100"/></td>
+	          <td><input type="text" name="mail" value="${mail}"
+	          		pattern="^[a-zA-Z0-9\-]+([a-zA-Z0-9\-]+)*@([a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"  
+	          		maxlength="100"/></td>
 	        </tr>
 	        <tr>
 	          <td>パスワード</td>
