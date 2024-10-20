@@ -49,7 +49,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware{
 			&&!(password.equals(""))
 			&&!(postal_code.equals(""))
 			&&!(prefecture.equals(""))
-			&&!(address_1.equals(""))
+			&&!(address_1.equals(""))   
 			&&!(address_2.equals(""))
 			){
 				setErrorFlg(0);

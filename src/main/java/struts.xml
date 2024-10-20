@@ -24,6 +24,10 @@
         <result name="success">regist_complete.jsp</result>
         <result name="error">regist.jsp</result>
       </action>
+      
+      <action name="ListAction" class="com.diworksdev.diblog.action.ListAction" method="execute">
+        <result name="success">list.jsp</result>
+      </action>
     </package>
     
 </struts>

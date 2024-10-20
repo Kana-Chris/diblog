@@ -54,12 +54,14 @@
         <s:if test="prefecture==''">
         住所（都道府県）が選択されていません。<br>
         </s:if>
+        
         <s:if test="address_1==''">
         住所（市区町村）が未入力です。<br>
         </s:if>
         <s:if test="address_2==''">
         住所（番地）が未入力です。<br>
         </s:if>
+        
         
       </s:if>
       </div>
@@ -142,12 +144,12 @@
 	        <tr>
 	          <td>住所（市区町村）</td>
 	          <td><input type="text" name="address_1" value="${address_1}"
-	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、カタカナ、漢字、数字で入力してください"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="10" title="ひらがな、カタカナ、漢字、数字、ハイフン（-）で入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>住所（番地）</td>
 	          <td><input type="text" name="address_2" value="${address_2}"
-	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー]*$" maxlength="100" title="ひらがな、カタカナ、漢字、数字で入力してください"/></td>
+	          pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="100" title="ひらがな、カタカナ、漢字、数字、ハイフン（-)、スペースで入力してください"/></td>
 	        </tr>
 	        <tr>
 	          <td>アカウント権限</td>

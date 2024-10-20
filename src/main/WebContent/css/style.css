@@ -35,12 +35,17 @@ footer{
 }
 table{
 	margin:0 auto;
-	margin-top:10px;
-	width:50%;
+	margin-top:3em;
+	width:80%;
 	text-align: center;
+	border-collapse:collapse;
 }
 table tr{
 	line-height: 40px;
+}
+table td{
+	
+	border:1px solid black;
 }
 .main-container{
     display:flex;
