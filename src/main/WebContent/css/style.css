@@ -33,7 +33,7 @@ footer{
     text-align:center;
 
 }
-table{
+table {
 	margin:0 auto;
 	margin-top:3em;
 	width:80%;
@@ -44,8 +44,23 @@ table tr{
 	line-height: 40px;
 }
 table td{
-	
 	border:1px solid black;
+}
+
+table th{
+	border:1px solid black;
+}
+
+.regist table{
+	margin:0 auto;
+	margin-top:3em;
+	width:30%;
+	text-align: center;
+	border-collapse:collapse;
+}
+
+.regist td{
+	border:0px ;
 }
 .main-container{
     display:flex;

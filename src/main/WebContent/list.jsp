@@ -13,19 +13,33 @@
             <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
             <nav class="mainNav">
                 <ul>
-                    <li>トップ</li>
+                    <li><a href='<s:url action="HomeAction"/>'>トップ</a></li>
                     <li>プロフィール</li>
                     <li>D.I.Blogについて</li>
                     <li>登録フォーム</li>
                     <li>問い合わせ</li>
-                    <li>その他</li>
                     <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
+                    <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
                 </ul>
             </nav>
     </header>
     
-    <table>
+    <table class="list">
       <tbody>
+        <tr>
+        <th>ID</th>
+        <th>名前（姓）</th>
+        <th>名前（名）</th>
+        <th>カナ（姓）</th>
+        <th>カナ（名）</th>
+        <th>メールアドレス</th>
+        <th>性別</th>
+        <th>アカウント権限</th>
+        <th>削除フラグ</th>
+        <th>登録日時</th>
+        <th>更新日時</th>
+        <th colspan="2">操作</th>
+        </tr>
         <s:iterator value="#session.accountList">
           <tr>
             <td><s:property value="id"/></td>

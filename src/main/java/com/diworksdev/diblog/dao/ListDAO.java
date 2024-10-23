@@ -15,7 +15,8 @@ public class ListDAO {
 	ListDTO listDTO = new ListDTO();
 	List<ListDTO> accountList= new ArrayList<ListDTO>();
 	
-	private String sql = "SELECT * FROM user_info ORDER BY id DESC";
+	private String sql = "SELECT id,family_name,last_name,family_name_kana,last_name_kana,mail,gender,authority,delete_flag,"
+			+ "cast(registared_time AS DATE),cast(update_time AS DATE) FROM user_info ORDER BY id DESC";
 	
 	String gender;
 	String authority;
@@ -52,8 +53,8 @@ public class ListDAO {
 				}else {
 					listDTO.setDelete_flag("無効");
 				}
-				listDTO.setRegistared_time(resultSet.getString("registared_time"));
-				listDTO.setUpdate_time(resultSet.getString("update_time"));
+				listDTO.setRegistared_time(resultSet.getString("cast(registared_time AS DATE)"));
+				listDTO.setUpdate_time(resultSet.getString("cast(update_time AS DATE)"));
 				
 				accountList.add(listDTO);
 			}

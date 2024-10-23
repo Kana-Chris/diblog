@@ -3,6 +3,7 @@ package com.diworksdev.diblog.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class DateUtil {
 
 	public String getDate() {
@@ -11,4 +12,5 @@ public class DateUtil {
 		
 		return simpleDateFormat.format(date);
 	}
+	
 }
