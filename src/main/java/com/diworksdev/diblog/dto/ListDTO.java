@@ -88,11 +88,11 @@ public class ListDTO {
 		return this.authority;
 	}
 	
-	public void setDelete_flag(String delete_flg) {
-		this.delete_flag = delete_flg;
+	public void setDelete_flag(String delete_flag) {
+		this.delete_flag = delete_flag;
 	}
 	
-	public String getDelete_flg() {
+	public String getDelete_flag() {
 		return this.delete_flag;
 	}
 	
