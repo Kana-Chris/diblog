@@ -21,13 +21,13 @@
             <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
             <nav class="mainNav">
                 <ul>
-                    <li>トップ</li>
-                    <li>プロフィール</li>
-                    <li>D.I.Blogについて</li>
-                    <li>登録フォーム</li>
-                    <li>問い合わせ</li>
-                    <li>その他</li>
-                    <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
+                  <li><a href='<s:url action="HomeAction"/>'>トップ</a></li>
+                  <li>プロフィール</li>
+                  <li>D.I.Blogについて</li>
+                  <li>登録フォーム</li>
+                  <li>問い合わせ</li>
+                  <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
+                  <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
                 </ul>
             </nav>
     </header>
@@ -53,7 +53,7 @@
     </main>
     </div>
     
-    <footer>
+    <footer class="bottom">
             
                 Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
           

@@ -20,20 +20,20 @@
      <header>
         <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
         <nav class="mainNav">
-              <ul>
-                  <li>トップ</li>
+               <ul>
+                  <li><a href='<s:url action="HomeAction"/>'>トップ</a></li>
                   <li>プロフィール</li>
                   <li>D.I.Blogについて</li>
                   <li>登録フォーム</li>
                   <li>問い合わせ</li>
-                  <li>その他</li>
                   <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
+                  <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
               </ul>
           </nav>
     </header>
     
     <main>
-      <div class="form">
+      <div class="regist">
 	      <s:form>
 			  <table>
 			    <tr>
