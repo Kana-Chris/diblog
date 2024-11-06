@@ -7,9 +7,13 @@
     <meta charset="UTF-8">
       <title>アカウント一覧</title>
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+      
   </head>
+  
   <body>
-  <header>
+    <header>
             <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
             <nav class="mainNav">
                 <ul>
@@ -54,13 +58,18 @@
             <td><s:property value="registared_time"/></td>
             <td><s:property value="update_time"/></td>
             <td><input type="button" value="更新"></td>
-            <td><input type="button" value="削除"></td>
+            <td>
+              <form action="HomeAction" method="post">
+                <input type="submit" value="削除" />
+                <input type="hidden" value="<s:property value='id'/>"  name="deleteId">
+              </form>
+            </td>
           </tr>
           
         </s:iterator>
       </tbody>
     </table>
-   
+    
      <footer>
             
                 Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
