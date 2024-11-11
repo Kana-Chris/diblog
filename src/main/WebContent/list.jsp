@@ -59,7 +59,7 @@
             <td><s:property value="update_time"/></td>
             <td><input type="button" value="更新"></td>
             <td>
-              <form action="HomeAction" method="post">
+              <form action="DeleteAction" method="post">
                 <input type="submit" value="削除" />
                 <input type="hidden" value="<s:property value='id'/>"  name="deleteId">
               </form>

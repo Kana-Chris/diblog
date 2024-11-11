@@ -28,6 +28,10 @@
       <action name="ListAction" class="com.diworksdev.diblog.action.ListAction" method="execute">
         <result name="success">list.jsp</result>
       </action>
+      
+      <action name="DeleteAction" class="com.diworksdev.diblog.action.DeleteAction" method="execute">
+        <result name="success">delete.jsp</result>
+      </action>
     </package>
     
 </struts>

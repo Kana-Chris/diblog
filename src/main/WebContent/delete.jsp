@@ -27,60 +27,65 @@
        </header>
        
        <main>
+       <h2 class="title">アカウント削除画面</h2>
          <div class="regist">
            <table>
-             <s:form action="">
-             <s:iterator value="">
+             <s:form action="DeleteConfirmAction">
+             <s:iterator value="#session.selectDTO">
                <tr>
                  <td>名前(姓)</td>
-                 <td></td>
+                 <td><s:property value="family_name"/></td>
                </tr>
                <tr>
                  <td>名前(名)</td>
-                 <td></td>
+                 <td><s:property value="last_name"/></td>
                </tr>
                <tr>
                  <td>カナ(姓)</td>
-                 <td></td>
+                 <td><s:property value="family_name_kana"/></td>
                </tr>
                <tr>
                  <td>カナ(名)</td>
-                 <td></td>
+                 <td><s:property value="last_name_kana"/></td>
                </tr>
                <tr>
                  <td>メールアドレス</td>
-                 <td></td>
+                 <td><s:property value="mail"/></td>
                </tr>
                <tr>
                  <td>パスワード</td>
-                 <td></td>
+                 <td>●●●●●●●●●●</td>
                </tr>
                <tr>
                  <td>性別</td>
-                 <td></td>
+                 <td><s:property value="gender"/></td>
                </tr>
                <tr>
                  <td>郵便番号</td>
-                 <td></td>
+                 <td><s:property value="postal_code"/></td>
                </tr>
                <tr>
                  <td>住所(都道府県)</td>
-                 <td></td>
+                 <td><s:property value="prefecture"/></td>
                </tr>
                <tr>
                  <td>住所(市区町村)</td>
-                 <td></td>
+                 <td><s:property value="address_1"/></td>
                </tr>
                <tr>
                  <td>住所(番地)</td>
-                 <td></td>
+                 <td><s:property value="address_2"/></td>
                </tr>
                <tr>
                  <td>アカウント権限</td>
-                 <td></td>
+                 <td><s:property value="authority"/></td>
                </tr>
                </s:iterator>
-               <input type="submit" value="確認する">
+               <tr>
+                 <td colspan="2">
+                    <input type="submit" value="確認する">
+                 </td>
+               </tr>
                </s:form>
              </table>
            </div>

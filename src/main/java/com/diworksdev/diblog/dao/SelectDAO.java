@@ -14,7 +14,7 @@ public class SelectDAO {
 	Connection connection = dbconnector.getConnection();
 	SelectDTO selectDTO = new SelectDTO();
 	
-	private String sql = "SELECT * FROM diblog WHERE id = ?";
+	private String sql = "SELECT * FROM user_info WHERE id = ?";
 	
 	public SelectDTO Select(int id) {
 		try {
@@ -36,6 +36,11 @@ public class SelectDAO {
 					selectDTO.setGender("女");
 				}
 				
+				selectDTO.setPostal_code(rs.getInt("postal_code"));
+				selectDTO.setPrefecture(rs.getString("prefecture"));
+				selectDTO.setAddress_1(rs.getString("address_1"));
+				selectDTO.setAddress_2(rs.getString("address_2"));
+				
 				if(rs.getInt("authority")==0) {
 					selectDTO.setAuthority("一般");
 				}else {
@@ -47,8 +52,7 @@ public class SelectDAO {
 				}else {
 					selectDTO.setDelete_flag("無効");
 				}
-				selectDTO.setRegistared_time(rs.getString("cast(registared_time AS DATE)"));
-				selectDTO.setUpdate_time(rs.getString("cast(update_time AS DATE)"));
+				
 				
 			}
 		}catch(SQLException e) {
