@@ -15,9 +15,13 @@ public class DeleteAction extends ActionSupport implements SessionAware{
 	SelectDTO selectDTO = new SelectDTO();
 	
 	public String execute() {
-		selectDTO = selectDAO.Select(deleteId);
-		session.put("deleteId",deleteId);
-		session.put("selectDTO", selectDTO);
+		if(session.get("selectDTO")==null) {
+		  selectDTO = selectDAO.Select(deleteId);
+		  session.put("deleteId",deleteId);
+		  session.put("selectDTO", selectDTO);
+		}else {
+			session.get("selectDTO");
+		}
 		return SUCCESS;
 	}
 	

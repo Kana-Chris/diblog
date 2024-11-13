@@ -32,6 +32,10 @@
       <action name="DeleteAction" class="com.diworksdev.diblog.action.DeleteAction" method="execute">
         <result name="success">delete.jsp</result>
       </action>
+      
+      <action name="DeleteConfirmAction" class="com.diworksdev.diblog.action.DeleteConfirmAction" method="execute">
+      	<result name="success">delete_confirm.jsp</result>
+      </action> 
     </package>
     
 </struts>

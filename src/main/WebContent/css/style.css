@@ -136,6 +136,11 @@ h2 .center{
     border-bottom: 2px solid gray;
 }
 
+.confirm {
+	text-align: center;
+	font-size:2em;
+}
+
 .message{
 	margin:0 auto;
 	margin-top:10px;
