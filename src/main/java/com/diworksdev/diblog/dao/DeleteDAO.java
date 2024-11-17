@@ -7,7 +7,7 @@ import com.diworksdev.diblog.util.DBConnector;
 
 public class DeleteDAO {
 	DBConnector dbconnector = new DBConnector();
-	private String sql = "UPDATE user_info SET delete_flg = 0 WHERE id = ?";
+	private String sql = "UPDATE user_info SET delete_flag = 1 WHERE id = ?";
 	
 	public int Delete(int id) {
 		int result =0;

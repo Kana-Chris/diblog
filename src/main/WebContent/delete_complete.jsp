@@ -3,20 +3,20 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>アカウント削除確認画面</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-    <script type="text/javascript">
-    　　function submitAction(url){
+<head>
+  <meta charset="UTF-8">
+  <title>アカウント削除完了画面</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script type="text/javascript">
+  function submitAction(url){
         $('form').attr('action',url);
         $('form').submit();
         }
-    </script>
+  </script>
   </head>
   <body>
-	 <header>
+     <header>
             <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
             <nav class="mainNav">
                 <ul>
@@ -30,25 +30,13 @@
                 </ul>
             </nav>
     </header>
-    
-    
-    
-      <h2 class="title">アカウント削除確認画面</h2>
- 	  <div class="confirm">
- 	    <s:form>
-    
-        本当に削除してよろしいですか？
-       
-        <button onclick="submitAction('DeleteAction')">前に戻る</button>
-        <button onclick="submitAction('DeleteCompleteAction')"/>削除する</button>
-      
-      </s:form>
-      </div>
-    <footer>
-            
-              Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
-          
-    </footer>
+    <h2 class="title">アカウント削除完了画面</h2>
+    <div class="confirm">
+    削除完了しました
+    <form>
+    <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
+    </form>
+    </div>
     
   </body>
 </html>
