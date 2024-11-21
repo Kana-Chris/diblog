@@ -40,6 +40,14 @@
       <action name="DeleteCompleteAction" class="com.diworksdev.diblog.action.DeleteCompleteAction" method="execute">
         <result name="success">delete_complete.jsp</result>      
       </action>
+      
+      <action name="UpdateAction" class="com.diworksdev.diblog.action.UpdateAction" method="execute">
+        <result name="success">update.jsp</result>
+      </action>
+      
+      <action name="UpdateConfirmAction" class="com.diworksdev.diblog.action.UpdateConfirmAction" method="execute">
+        <result name="success">update_confirm.jsp</result>
+      </action>
     </package>
     
 </struts>

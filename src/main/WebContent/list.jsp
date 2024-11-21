@@ -57,7 +57,12 @@
             <td><s:property value="delete_flag"/></td>
             <td><s:property value="registared_time"/></td>
             <td><s:property value="update_time"/></td>
-            <td><input type="button" value="更新"></td>
+            <td>
+              <form action="UpdateAction" method="post">
+                <input type="submit" value="更新">
+                <input type="hidden" value="<s:property value='id'/>" name="updateId">
+              </form>
+            </td>
             <td>
               <form action="DeleteAction" method="post">
                 <input type="submit" value="削除" />
