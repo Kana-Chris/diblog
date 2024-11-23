@@ -20,9 +20,29 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	private String address_1;
 	private String address_2;
 	private String authority;
-  
+	
+	public String errorMessage=null;
+	
+	
+	
 	public String execute (){
+		//セッションに入れる時の名前がRegistActionと同じになってる
+		session.put("family_name", family_name);
+		session.put("last_name", last_name);
+	    session.put("family_name_kana", address_1);
+	    session.put("last_name_kana", address_1);
+	    session.put("mail",mail);
+	    session.put("password", password);
+	    session.put("gender",gender);
+	    session.put("postal_code",postal_code);
+	    session.put("prefecture",prefecture);
+	    session.put("address_1", address_1);
+	    session.put("address_2",address_2);
+	    session.put("authority",authority);
+		
 		return SUCCESS;
+		
+		
 	}
   
 	public Map<String,Object> getSession(){
