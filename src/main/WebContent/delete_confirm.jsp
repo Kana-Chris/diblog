@@ -38,10 +38,12 @@
  	    <s:form>
     
         本当に削除してよろしいですか？
-       
-        <button onclick="submitAction('DeleteAction')">前に戻る</button>
-        <button onclick="submitAction('DeleteCompleteAction')"/>削除する</button>
-      
+        
+        <div class="button">
+          <button onclick="submitAction('DeleteAction')">前に戻る</button>
+          <button onclick="submitAction('DeleteCompleteAction')"/>削除する</button>
+        </div>
+        
       </s:form>
       </div>
     <footer>

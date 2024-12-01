@@ -31,14 +31,17 @@
             </nav>
     </header>
     <h2 class="title">アカウント削除完了画面</h2>
+    
     <div class="confirm">
-    削除完了しました
-    <form>
-    <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
-    </form>
+      <s:property value="message"/>
+      
+      <div class="button">
+       <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
+      </div>
+  
     </div>
     
-      <footer>
+    <footer>
             
               Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
           

@@ -90,7 +90,7 @@
 		        </tr>
 		        <tr>
 		          <td><input type="button" value="前に戻る" onclick="history.back()"/></td>
-		          <td><input type="button" value="登録する" onclick="submitAction('UpadateCompleteAction')"/></td>
+		          <td><input type="button" value="登録する" onclick="submitAction('UpdateCompleteAction')"/></td>
 		        </tr>
 		      </table>
 		  </s:form>

@@ -139,6 +139,7 @@ h2 .center{
 .confirm {
 	text-align: center;
 	font-size:2em;
+	height:400px;
 }
 
 .message{
@@ -146,6 +147,11 @@ h2 .center{
 	margin-top:10px;
 	width:80%;
 	text-align: center;
+}
+.button{
+	display: inline_block;
+	margin:auto;
+	margin-bottom: 10em;
 }
 
 .bottom{

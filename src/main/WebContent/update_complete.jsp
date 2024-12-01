@@ -26,7 +26,11 @@
     <h2 class="title">アカウント更新完了画面</h2>
     
     <div class="confirm">
-      更新完了しました
+   
+      <s:property value="message"/>
+      <div class="button">
+        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
+      </div>
     </div>
     <footer>
             

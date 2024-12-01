@@ -48,6 +48,10 @@
       <action name="UpdateConfirmAction" class="com.diworksdev.diblog.action.UpdateConfirmAction" method="execute">
         <result name="success">update_confirm.jsp</result>
       </action>
+      
+      <action name="UpdateCompleteAction" class="com.diworksdev.diblog.action.UpdateCompleteAction" method="execute">
+      	<result name="success">update_complete.jsp</result>
+      </action>
     </package>
     
 </struts>
