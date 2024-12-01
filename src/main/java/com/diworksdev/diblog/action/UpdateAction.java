@@ -17,6 +17,7 @@ public class UpdateAction extends ActionSupport implements SessionAware{
 		SelectDAO selectDAO = new SelectDAO();
 		SelectDTO selectDTO = new SelectDTO();	
 		selectDTO = selectDAO.Select(updateId);
+		session.put("u_id", updateId);
 		session.put("selectDTO", selectDTO);
 		}
 		return SUCCESS;

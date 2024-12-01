@@ -21,24 +21,22 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	private String address_2;
 	private String authority;
 	
-	public String errorMessage=null;
-	
-	
+	private String errorMessage=null;
 	
 	public String execute (){
-		//セッションに入れる時の名前がRegistActionと同じになってる
-		session.put("family_name", family_name);
-		session.put("last_name", last_name);
-	    session.put("family_name_kana", address_1);
-	    session.put("last_name_kana", address_1);
-	    session.put("mail",mail);
-	    session.put("password", password);
-	    session.put("gender",gender);
-	    session.put("postal_code",postal_code);
-	    session.put("prefecture",prefecture);
-	    session.put("address_1", address_1);
-	    session.put("address_2",address_2);
-	    session.put("authority",authority);
+		
+		session.put("u_family_name", family_name);
+		session.put("u_last_name", last_name);
+	    session.put("u_family_name_kana", family_name_kana);
+	    session.put("u_last_name_kana", last_name_kana);
+	    session.put("u_mail",mail);
+	    session.put("u_password", password);
+	    session.put("u_gender",gender);
+	    session.put("u_postal_code",postal_code);
+	    session.put("u_prefecture",prefecture);
+	    session.put("u_address_1", address_1);
+	    session.put("u_address_2",address_2);
+	    session.put("u_authority",authority);
 		
 		return SUCCESS;
 		
@@ -147,6 +145,14 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	
 	public void setAuthority(String authority) {
 		this.authority = authority;
+	}
+	
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+	
+	public String getErrorMessage() {
+		return errorMessage;
 	}
 }
 

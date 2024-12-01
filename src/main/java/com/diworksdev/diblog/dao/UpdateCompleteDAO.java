@@ -4,17 +4,20 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.diworksdev.diblog.util.DBConnector;
+import com.diworksdev.diblog.util.DateUtil;
 import com.diworksdev.diblog.util.PassUtil;
-
 
 public class UpdateCompleteDAO {
 	
 	DBConnector dbconnector = new DBConnector();
 	Connection connection = dbconnector.getConnection();
+	
 
 	private String sql ="UPDATE user_info SET family_name=?,last_name=?,family_name_kana=?,last_name=?,"
-			+ " mail=?,password=?,gender=?,postal_code=?,prefecture=?,address_1=?,address_2=?,authority=?";
+			+ " mail=?,password=?,gender=?,postal_code=?,prefecture=?,address_1=?,address_2=?,authority=?,"
+			+ "update_time=? WHERE id = ?";
 	
+	DateUtil dateUtil = new DateUtil();
 	PassUtil passUtil = new PassUtil();
 	public int update_result;
 	private int int_gender;
@@ -22,7 +25,8 @@ public class UpdateCompleteDAO {
 	private int int_authority;
 	private String hash;
 	
-	public int update(String family_name,
+	public int update(String id,
+					String family_name,
 					String last_name,
 					String family_name_kana,
 					String last_name_kana,
@@ -34,6 +38,7 @@ public class UpdateCompleteDAO {
 					String address_1,
 					String address_2,
 					String authority) {
+		
 		
 		int_postal_code = Integer.parseInt(postal_code);
 		
@@ -65,9 +70,11 @@ public class UpdateCompleteDAO {
 			preparedStatement.setString(10, address_1);
 			preparedStatement.setString(11, address_2);
 			preparedStatement.setInt(12,int_authority);
+			preparedStatement.setString(13,dateUtil.getDate());
+			preparedStatement.setString(14, id);
 			
 			update_result = preparedStatement.executeUpdate();
-			
+		
 			
 			
 		}catch(SQLException e) {
@@ -81,5 +88,6 @@ public class UpdateCompleteDAO {
 		}
 		
 		return update_result;
+		
 	}
 }
