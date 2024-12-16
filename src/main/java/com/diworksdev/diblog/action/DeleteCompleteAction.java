@@ -8,17 +8,21 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 public class DeleteCompleteAction extends ActionSupport implements SessionAware{
-	private Map<String,Object> session;
+	public Map<String,Object> session;
 	private int DAOresult;
 	private int deleteId;
 	private String message = null;
 	DeleteDAO deleteDAO = new DeleteDAO();
 	
 	public String execute() {
-		deleteId = (Integer)session.get("deleteId");
-		DAOresult = deleteDAO.Delete(deleteId);
-		if(DAOresult==1) {
-			setMessage("削除完了しました");
+		if(session!=null) {
+			deleteId = (Integer)session.get("deleteId");
+			DAOresult = deleteDAO.Delete(deleteId);
+			if(DAOresult==1) {
+				setMessage("削除完了しました");
+			}else {
+				setMessage("エラーが発生したためアカウント削除できません。");
+			}
 		}else {
 			setMessage("エラーが発生したためアカウント削除できません。");
 		}

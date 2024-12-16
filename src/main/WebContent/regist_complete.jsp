@@ -47,9 +47,9 @@
         </span>
       </s:if>
       
-      <div class="button">     
+          
         <button onclick="submitAction('HomeAction')">TOPに戻る</button>
-      </div>   
+        
     </main>
     </div>
     

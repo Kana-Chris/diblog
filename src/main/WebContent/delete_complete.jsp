@@ -8,12 +8,12 @@
   <title>アカウント削除完了画面</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-  <script type="text/javascript">
-  function submitAction(url){
+    <script type="text/javascript">
+    function submitAction(url){
         $('form').attr('action',url);
         $('form').submit();
         }
-  </script>
+    </script>
   </head>
   <body>
      <header>
@@ -35,9 +35,9 @@
     <div class="confirm">
       <s:property value="message"/>
       
-      <div class="button">
+     <form>
        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
-      </div>
+    </form>
   
     </div>
     

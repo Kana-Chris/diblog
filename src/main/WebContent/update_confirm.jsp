@@ -31,7 +31,9 @@
               </ul>
           </nav>
       </header>
+      <h2 class="title">アカウント更新確認画面</h2>
       <div class="regist">
+         
 	      <s:form>
 			  <table>
 			    <tr>

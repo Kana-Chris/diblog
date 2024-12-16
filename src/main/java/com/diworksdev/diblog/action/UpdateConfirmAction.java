@@ -21,9 +21,12 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	private String address_2;
 	private String authority;
 	
-	private String errorMessage=null;
+    String result = ERROR;
+	
+	private int errorFlg;
 	
 	public String execute (){
+		result = SUCCESS;
 		
 		session.put("u_family_name", family_name);
 		session.put("u_last_name", last_name);
@@ -38,7 +41,28 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	    session.put("u_address_2",address_2);
 	    session.put("u_authority",authority);
 		
-		return SUCCESS;
+	    if(!(family_name.equals(""))  
+				&&!(last_name.equals(""))
+				&&!(family_name_kana.equals(""))
+				&&!(last_name_kana.equals(""))
+				&&!(mail.equals(""))
+				&&!(password.equals(""))
+				&&!(postal_code.equals(""))
+				&&!(prefecture.equals(""))
+				&&!(address_1.equals(""))   
+				&&!(address_2.equals(""))
+				){
+					setErrorFlg(0);
+					
+
+				}else {
+					result=ERROR;
+					setErrorFlg(1);
+					
+				}
+			
+	    
+		return result;
 		
 		
 	}
@@ -147,12 +171,13 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 		this.authority = authority;
 	}
 	
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public int getErrorFlg() {
+		return errorFlg;
 	}
 	
-	public String getErrorMessage() {
-		return errorMessage;
+	public void setErrorFlg(int errorFlg) {
+		this.errorFlg = errorFlg;
 	}
+	
 }
 

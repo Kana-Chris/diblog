@@ -6,6 +6,13 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script type="text/javascript">
+    function submitAction(url){
+        $('form').attr('action',url);
+        $('form').submit();
+        }
+    </script>
     <title>アカウント更新完了画面</title>
   </head>
   <body>
@@ -23,15 +30,18 @@
             </ul>
       </nav>
     </header>
+    <main>
     <h2 class="title">アカウント更新完了画面</h2>
     
     <div class="confirm">
    
       <s:property value="message"/>
-      <div class="button">
+      <form>
         <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
-      </div>
+	  </form>
+	  
     </div>
+    </main>
     <footer>
             
                 Copyright D.I.works| D.I.Blog is the one which provides A to A about programming

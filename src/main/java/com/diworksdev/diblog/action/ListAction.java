@@ -13,7 +13,22 @@ public class ListAction extends ActionSupport implements SessionAware{
 	
 	private List<ListDTO> accountList = new ArrayList<ListDTO>();
 	private Map<String,Object> session;
+	
 	public String execute() {
+		session.remove("u_family_name");
+		session.remove("u_last_name");
+		session.remove("u_family_name_kana");
+		session.remove("u_last_name_kana");
+		session.remove("u_mail");
+		session.remove("u_password");
+		session.remove("u_gender");
+		session.remove("u_postal_code");
+		session.remove("u_prefecture");
+		session.remove("u_address_1");
+		session.remove("u_address_2");
+		session.remove("u_authority");
+		session.remove("deleteId");
+		session.remove("selectDTO");
 		
 		ListDAO listDAO = new ListDAO();
 		accountList =listDAO.selectAll();

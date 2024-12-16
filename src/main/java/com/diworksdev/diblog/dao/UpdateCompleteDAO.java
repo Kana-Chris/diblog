@@ -13,7 +13,7 @@ public class UpdateCompleteDAO {
 	Connection connection = dbconnector.getConnection();
 	
 
-	private String sql ="UPDATE user_info SET family_name=?,last_name=?,family_name_kana=?,last_name=?,"
+	private String sql ="UPDATE user_info SET family_name=?,last_name=?,family_name_kana=?,last_name_kana=?,"
 			+ " mail=?,password=?,gender=?,postal_code=?,prefecture=?,address_1=?,address_2=?,authority=?,"
 			+ "update_time=? WHERE id = ?";
 	
