@@ -30,76 +30,38 @@
                 </ul>
             </nav>
     </header>
-    <main>
-    <h2 class="title">アカウント更新画面</h2>
-      <!-- エラーメッセージ表示 -->
-      <div class="message">
-      <s:if test="errorFlg==1">
-        <s:if test="family_name==''">
-        名前（姓）が未入力です。<br>
-        </s:if>
-        <s:if test="last_name==''">
-        名前（名）が未入力です。<br>
-        </s:if>
-        <s:if test="family_name_kana==''">
-        カナ（姓）が未入力です。<br>
-        </s:if>
-        <s:if test="last_name_kana==''">
-        カナ（名）が未入力です。<br>
-        </s:if>
-        <s:if test="mail==''">
-        メールアドレスが未入力です。<br>
-        </s:if>
-        <s:if test="password==''">
-        パスワードが未入力です。<br>
-        </s:if>
-        <s:if test="postal_code==''">
-        郵便番号が未入力です。<br>
-        </s:if>
-        <s:if test="prefecture==''">
-        住所（都道府県）が選択されていません。<br>
-        </s:if>
-        
-        <s:if test="address_1==''">
-        住所（市区町村）が未入力です。<br>
-        </s:if>
-        <s:if test="address_2==''">
-        住所（番地）が未入力です。<br>
-        </s:if>
-        
-        
-      </s:if>  
     <div class="regist">
-     
 	    <s:form action="UpdateConfirmAction">
+	      <s:iterator value="selectDTO">
 	      
 		    <table class="regist">
 		      <tr>
 		        <td>名前（姓）</td>
-		        <td><input type="text" name="family_name" value="<s:property value='#session.u_family_name'/>"
+		        <td><input type="text" name="family_name" value="<s:property value='family_name'/>"
 		        pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/></td>
 		      </tr>
 	          <tr>
 	            <td>名前（名）</td>
-	            <td><input type="text" name="last_name" value="<s:property value='#session.u_last_name'/>"  
+	            <td><input type="text" name="last_name" value="<s:property value='last_name'/>"  
 	            pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/><td>
 	          </tr>
 	          <tr>
 	            <td>カナ（姓）</td>
-	            <td><input type="text" name="family_name_kana" value="<s:property value='#session.u_family_name_kana'/>"
+	            <td><input type="text" name="family_name_kana" value="<s:property value='family_name_kana'/>"
 	            pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	          </tr>
 	          <tr>
 	            <td>カナ（名）</td>
-   	            <td><input type="text" name="last_name_kana" value="<s:property value='#session.u_last_name_kana'/>"
+   	            <td><input type="text" name="last_name_kana" value="<s:property value='last_name_kana'/>"
 	            pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	          </tr>
 	          <tr>
 	            <td>メールアドレス</td>
-	            <td><input type="text" name="mail" value="<s:property value='#session.u_mail'/>"
+	            <td><input type="text" name="mail" value="<s:property value='mail'/>"
 	            		pattern="^[a-zA-Z0-9\-]+([a-zA-Z0-9\-]+)*@([a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"  
 	          	    	maxlength="100"/></td>
 	          </tr>
+	          <!-- パスワード変更操作機能は別のページに作る -->
 	          <tr>
 	            <td>パスワード</td>
 	            <td><input type="text" name="password" value="●●●●●●"
@@ -109,8 +71,8 @@
 	           <td>性別</td>
 	           <td>
 	           <%int gender=0;
-	           	 if(session.getAttribute("u_gender")!=null){
-	            	 if((session.getAttribute("u_gender").toString())=="男"){
+	           	 if(request.getAttribute("gender")!=null){
+	            	 if((request.getAttribute("gender").toString())=="男"){
 	          			 gender=0;
 	          		}else{
 	          			gender=1;
@@ -123,14 +85,14 @@
 	          </tr>
 	          <tr>
 	            <td>郵便番号</td>
-	            <td><input type="text" name="postal_code" value="<s:property value='#session.u_postal_code'/>"
+	            <td><input type="text" name="postal_code" value="<s:property value='postal_code'/>"
 	            pattern="[0-9]{7}" title="半角数字で入力してください"/></td>
 	          </tr>
 	          <tr>
 	            <td>住所（都道府県）</td>
 	            <td>
 	              <select name="prefecture">
-	    	  	  <option><s:property value='#session.u_prefecture'/></option>
+	    	  	  <option><s:property value='prefecture'/></option>
 	              <script>
 				 	var prefectureList =
 						 ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県",
@@ -151,20 +113,20 @@
 	          </tr>
 	          <tr>
 	            <td>住所（市区町村）</td>
-	            <td><input type="text" name="address_1" value="<s:property value='#session.u_address_1'/>"
+	            <td><input type="text" name="address_1" value="<s:property value='address_1'/>"
 	            pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="10" title="ひらがな、カタカナ、漢字、数字、ハイフン（-）で入力してください"/></td>
 	          </tr>
 	          <tr>
 	            <td>住所（番地）</td>
-	            <td><input type="text" name="address_2" value="<s:property value='#session.u_address_2'/>"
+	            <td><input type="text" name="address_2" value="<s:property value='address_2'/>"
 	            pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="100" title="ひらがな、カタカナ、漢字、数字、ハイフン（-)、スペースで入力してください"/></td>
 	          </tr>
 	          <tr>
 	            <td>アカウント権限</td>
 	            <td>
 	              <%int authority =0;
-	                if(session.getAttribute("u_authority")!=null){
-	              	  if(session.getAttribute("u_authority").toString().equals("一般")){
+	                if(request.getAttribute("authority")!=null){
+	              	  if(request.getAttribute("authority").toString().equals("一般")){
 	              		  authority = 0;
 	            	  }else{
 	            		authority = 1;
@@ -182,10 +144,9 @@
 	            </td>
 	          </tr>
 	          </table>
-	        
+	        </s:iterator>
 	      </s:form>
 	    </div>
-	</main>
     <footer>
             
               Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
