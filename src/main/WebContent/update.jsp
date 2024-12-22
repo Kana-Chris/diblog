@@ -32,7 +32,6 @@
     </header>
     <div class="regist">
 	    <s:form action="UpdateConfirmAction">
-	      <s:iterator value="selectDTO">
 	      
 		    <table class="regist">
 		      <tr>
@@ -144,7 +143,7 @@
 	            </td>
 	          </tr>
 	          </table>
-	        </s:iterator>
+	        
 	      </s:form>
 	    </div>
     <footer>

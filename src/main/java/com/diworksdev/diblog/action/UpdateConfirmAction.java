@@ -28,19 +28,7 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	public String execute (){
 		result = SUCCESS;
 		
-		session.put("u_family_name", family_name);
-		session.put("u_last_name", last_name);
-	    session.put("u_family_name_kana", family_name_kana);
-	    session.put("u_last_name_kana", last_name_kana);
-	    session.put("u_mail",mail);
-	    session.put("u_password", password);
-	    session.put("u_gender",gender);
-	    session.put("u_postal_code",postal_code);
-	    session.put("u_prefecture",prefecture);
-	    session.put("u_address_1", address_1);
-	    session.put("u_address_2",address_2);
-	    session.put("u_authority",authority);
-		
+
 	    if(!(family_name.equals(""))  
 				&&!(last_name.equals(""))
 				&&!(family_name_kana.equals(""))
@@ -52,6 +40,8 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 				&&!(address_1.equals(""))   
 				&&!(address_2.equals(""))
 				){
+	    	
+	    	
 					setErrorFlg(0);
 					
 

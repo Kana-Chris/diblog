@@ -36,7 +36,7 @@ public class SelectDAO {
 					selectDTO.setGender("女");
 				}
 				
-				selectDTO.setPostal_code(rs.getInt("postal_code"));
+				selectDTO.setPostal_code(rs.getString("postal_code"));
 				selectDTO.setPrefecture(rs.getString("prefecture"));
 				selectDTO.setAddress_1(rs.getString("address_1"));
 				selectDTO.setAddress_2(rs.getString("address_2"));

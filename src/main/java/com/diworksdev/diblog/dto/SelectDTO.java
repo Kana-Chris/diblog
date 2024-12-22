@@ -10,7 +10,7 @@ public class SelectDTO {
 	private String mail;
 	private String password;
 	private String gender;
-	private int postal_code;
+	private String postal_code;
 	private String prefecture;
 	private String address_1;
 	private String address_2;
@@ -82,11 +82,11 @@ public class SelectDTO {
 	}
 	
 	
-	public void setPostal_code(int postal_code) {
+	public void setPostal_code(String postal_code) {
 		this.postal_code = postal_code;
 	}
 	
-	public int getPostal_code() {
+	public String getPostal_code() {
 		return postal_code;
 	}
 	
