@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UpdateAction extends ActionSupport implements SessionAware{
 	
 	public Map<String,Object> session;
-	private int updateId;
+	private String updateId;
 	private String family_name;
 	private String last_name;
 	private String family_name_kana;
@@ -30,11 +30,13 @@ public class UpdateAction extends ActionSupport implements SessionAware{
 	public String execute() {
 		
 		
-		if(selectDTO==null) {
+			
 			//DTOにユーザー情報を格納し、DTOを参照してフィールドに格納
 			SelectDAO selectDAO = new SelectDAO();
+			
 			selectDTO = selectDAO.Select(updateId);  
 			
+			setUpdateId(updateId);
 			setFamily_name(selectDTO.getFamily_name());
 			setLast_name(selectDTO.getLast_name());
 			setLast_name(selectDTO.getLast_name());
@@ -47,17 +49,14 @@ public class UpdateAction extends ActionSupport implements SessionAware{
 			setAddress_1(selectDTO.getAddress_1());
 			setAddress_2(selectDTO.getAddress_2());
 			setAuthority(selectDTO.getAuthority());
-		}
-		
-		
 		
 		return SUCCESS;
 	}
 	
-	public int getUpdateId() {
+	public String getUpdateId() {
 		return updateId;
 	}
-	public void setUpdateId(int updateId) {
+	public void setUpdateId(String updateId) {
 		this.updateId = updateId;
 	}
 	
