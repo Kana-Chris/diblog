@@ -9,27 +9,33 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class DeleteAction extends ActionSupport implements SessionAware{
 	
-	private int deleteId;
+	private String deleteId;
 	private Map<String,Object> session;
 	SelectDAO selectDAO = new SelectDAO();
-	SelectDTO selectDTO = new SelectDTO();
+    private SelectDTO selectDTO;
 	
 	public String execute() {
-		if(session.get("selectDTO")==null) {
+		
 		  selectDTO = selectDAO.Select(deleteId);
-		  session.put("deleteId",deleteId);
-		  session.put("selectDTO", selectDTO);
-		}else {
-			session.get("selectDTO");
-		}
+		  setSelectDTO(selectDTO);
+		  setDeleteId(deleteId);
+		
 		return SUCCESS;
 	}
 	
-	public void setDeleteId(int deleteId) {
+	public void setDeleteId(String deleteId) {
 		this.deleteId = deleteId;
 	}
-	public int getDeleteId() {
+	public String getDeleteId() {
 		return deleteId;
+	}
+	
+	public void setSelectDTO(SelectDTO selectDTO) {
+		this.selectDTO = selectDTO;
+	}
+	
+	public SelectDTO getSelectDTO() {
+		return this.selectDTO;
 	}
 	
 	public void setSession(Map<String,Object> session) {

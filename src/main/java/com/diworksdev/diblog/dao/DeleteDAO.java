@@ -9,12 +9,12 @@ public class DeleteDAO {
 	DBConnector dbconnector = new DBConnector();
 	private String sql = "UPDATE user_info SET delete_flag = 1 WHERE id = ?";
 	
-	public int Delete(int id) {
+	public int Delete(String id) {
 		int result =0;
 		Connection connection = dbconnector.getConnection();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setString(1, id);
 			result = preparedStatement.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

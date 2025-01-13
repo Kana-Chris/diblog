@@ -2,7 +2,7 @@ package com.diworksdev.diblog.dto;
 
 public class ListDTO {
 	
-	private int id;
+	private String id;
 	private String family_name;
 	private String last_name;
 	private String family_name_kana;
@@ -15,10 +15,10 @@ public class ListDTO {
 	private String registared_time;
 	private String update_time;
 	
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id=id;
 	}
-	public int getId() {
+	public String getId() {
 		return this.id;
 	}
 	

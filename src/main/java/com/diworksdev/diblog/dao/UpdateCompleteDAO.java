@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import com.diworksdev.diblog.util.DBConnector;
 import com.diworksdev.diblog.util.DateUtil;
-import com.diworksdev.diblog.util.PassUtil;
 
 public class UpdateCompleteDAO {
 	
@@ -14,16 +13,14 @@ public class UpdateCompleteDAO {
 	
 
 	private String sql ="UPDATE user_info SET family_name=?,last_name=?,family_name_kana=?,last_name_kana=?,"
-			+ " mail=?,password=?,gender=?,postal_code=?,prefecture=?,address_1=?,address_2=?,authority=?,"
+			+ " mail=?,gender=?,postal_code=?,prefecture=?,address_1=?,address_2=?,authority=?,"
 			+ "update_time=? WHERE id = ?";
 	
 	DateUtil dateUtil = new DateUtil();
-	PassUtil passUtil = new PassUtil();
 	public int update_result;
 	private int int_gender;
 	private int int_postal_code;
 	private int int_authority;
-	private String hash;
 	
 	public int update(String id,
 					String family_name,
@@ -31,7 +28,6 @@ public class UpdateCompleteDAO {
 					String family_name_kana,
 					String last_name_kana,
 					String mail,
-					String password,
 					String gender,
 					String postal_code,
 					String prefecture,
@@ -53,7 +49,6 @@ public class UpdateCompleteDAO {
 		}else {
 			int_authority=1;
 		}
-		hash = passUtil.password_hash(password);
 		
 		try {
 			
@@ -63,15 +58,14 @@ public class UpdateCompleteDAO {
 			preparedStatement.setString(3, family_name_kana);
 			preparedStatement.setString(4,last_name_kana);
 			preparedStatement.setString(5, mail);
-			preparedStatement.setString(6, hash);
-			preparedStatement.setInt(7, int_gender);
-			preparedStatement.setInt(8,int_postal_code);
-			preparedStatement.setString(9, prefecture);
-			preparedStatement.setString(10, address_1);
-			preparedStatement.setString(11, address_2);
-			preparedStatement.setInt(12,int_authority);
-			preparedStatement.setString(13,dateUtil.getDate());
-			preparedStatement.setString(14, id);
+			preparedStatement.setInt(6, int_gender);
+			preparedStatement.setInt(7,int_postal_code);
+			preparedStatement.setString(8, prefecture);
+			preparedStatement.setString(9, address_1);
+			preparedStatement.setString(10, address_2);
+			preparedStatement.setInt(11,int_authority);
+			preparedStatement.setString(12,dateUtil.getDate());
+			preparedStatement.setString(13,id);
 			
 			update_result = preparedStatement.executeUpdate();
 		

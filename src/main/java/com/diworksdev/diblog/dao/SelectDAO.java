@@ -16,10 +16,10 @@ public class SelectDAO {
 	
 	private String sql = "SELECT * FROM user_info WHERE id = ?";
 	
-	public SelectDTO Select(int id) {
+	public SelectDTO Select(String updateId) {
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setInt(1,id);
+			ps.setString(1,updateId);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
