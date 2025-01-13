@@ -8,12 +8,12 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	
 	public Map<String,Object> session;
+	private String updateId;
 	private String family_name;
 	private String last_name;
 	private String family_name_kana;
 	private String last_name_kana;
 	private String mail;
-	private String password;
 	private String gender;
 	private String postal_code;
 	private String prefecture;
@@ -34,7 +34,6 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 				&&!(family_name_kana.equals(""))
 				&&!(last_name_kana.equals(""))
 				&&!(mail.equals(""))
-				&&!(password.equals(""))
 				&&!(postal_code.equals(""))
 				&&!(prefecture.equals(""))
 				&&!(address_1.equals(""))   
@@ -64,7 +63,13 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
 	}
-  
+	
+	public String getUpdateId() {
+		return this.updateId;
+	}
+	public void setUpdateId(String updateId) {
+		this.updateId = updateId;
+	}
 	public String getFamily_name() {
 		return family_name;
 	}
@@ -103,14 +108,6 @@ public class UpdateConfirmAction extends ActionSupport implements SessionAware{
 	
 	public void setMail(String mail) {
 		this.mail = mail;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	public String getGender() {
