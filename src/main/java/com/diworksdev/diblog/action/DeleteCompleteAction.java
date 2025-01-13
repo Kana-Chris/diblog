@@ -10,22 +10,19 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DeleteCompleteAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 	private int DAOresult;
-	private int deleteId;
+	private String deleteId;
 	private String message = null;
 	DeleteDAO deleteDAO = new DeleteDAO();
 	
 	public String execute() {
-		if(session!=null) {
-			deleteId = (Integer)session.get("deleteId");
+
 			DAOresult = deleteDAO.Delete(deleteId);
 			if(DAOresult==1) {
 				setMessage("削除完了しました");
 			}else {
 				setMessage("エラーが発生したためアカウント削除できません。");
 			}
-		}else {
-			setMessage("エラーが発生したためアカウント削除できません。");
-		}
+	
 		return SUCCESS;
 	}
 	
@@ -35,6 +32,13 @@ public class DeleteCompleteAction extends ActionSupport implements SessionAware{
 	
 	public Map<String,Object> getSession(){
 		return session;
+	}
+	public String getDeletId() {
+		return this.deleteId;
+	}
+	
+	public void setDeleteId(String deleteId) {
+		this.deleteId = deleteId;
 	}
 	
 	public void setMessage(String message) {

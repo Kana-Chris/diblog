@@ -29,7 +29,7 @@ public class ListDAO {
 			
 			while(resultSet.next()) {
 				ListDTO listDTO = new ListDTO();
-				listDTO.setId(resultSet.getInt("id"));
+				listDTO.setId(resultSet.getString("id"));
 				listDTO.setFamily_name(resultSet.getString("family_name"));
 				listDTO.setLast_name(resultSet.getString("last_name"));
 				listDTO.setFamily_name_kana(resultSet.getString("family_name_kana"));
