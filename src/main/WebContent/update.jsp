@@ -30,6 +30,7 @@
                 </ul>
             </nav>
     </header>
+    <h2 class="title">アカウント更新画面</h2>
     <div class="regist">
 	    <s:form action="UpdateConfirmAction">
 	      
@@ -60,12 +61,13 @@
 	            		pattern="^[a-zA-Z0-9\-]+([a-zA-Z0-9\-]+)*@([a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"  
 	          	    	maxlength="100"/></td>
 	          </tr>
-	          <!-- パスワード変更操作機能は別のページに作る -->
+	          <!-- パスワード変更操作機能は別のページに作るx
 	          <tr>
 	            <td>パスワード</td>
 	            <td><input type="text" name="password" value="●●●●●●"
 	            pattern="^[0-9A-Za-z]+$" maxlength="10" title="半角英数字で入力してください"/></td>
 	          </tr>
+	           -->
 	          <tr>
 	           <td>性別</td>
 	           <td>
@@ -139,6 +141,7 @@
 	          </tr>
 	          <tr>
 	            <td colspan="2">
+	              <input type="hidden" value='<s:property value="updateId"/>' name="updateId">
 	              <input type="submit" value="確認する"/>
 	            </td>
 	          </tr>
