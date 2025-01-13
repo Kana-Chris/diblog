@@ -38,7 +38,7 @@
  	    <s:form>
     
         本当に削除してよろしいですか？
-        
+        <input type="hidden" value='<s:property value="deleteId"/>' name="deleteId">
         <div class="button">
           <button onclick="submitAction('DeleteAction')">前に戻る</button>
           <button onclick="submitAction('DeleteCompleteAction')"/>削除する</button>

@@ -31,7 +31,7 @@
          <div class="regist">
            <table>
              <s:form action="DeleteConfirmAction">
-             <s:iterator value="#session.selectDTO">
+             <s:iterator value="selectDTO">
                <tr>
                  <td>名前(姓)</td>
                  <td><s:property value="family_name"/></td>
@@ -83,7 +83,9 @@
                </s:iterator>
                <tr>
                  <td colspan="2">
+                    <input type="hidden" value='<s:property value="deleteId"/>' name="deleteId">
                     <input type="submit" value="確認する">
+            
                  </td>
                </tr>
                </s:form>

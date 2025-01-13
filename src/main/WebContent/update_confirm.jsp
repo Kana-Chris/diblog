@@ -38,64 +38,94 @@
 			  <table>
 			    <tr>
 			      <td>名前（姓）</td>
-			      <td><s:property value="family_name"/></td>
+			      <td>
+			      <s:property value="family_name"/>
+			      <input type="hidden" name="family_name" value="<s:property value="family_name"/>">
+			      </td>
 			    </tr>
 		        <tr>
 		          <td>名前（名）</td>
-		          <td><s:property value="last_name"/></td>
+		          <td><s:property value="last_name"/>
+		            <input type="hidden" name="last_name" value="<s:property value="last_name"/>">
+		          </td>
 		        </tr>
 		        <tr>
 		          <td>カナ（姓）</td>
-		          <td><s:property value="family_name_kana"/></td>
+		          <td>
+		            <s:property value="family_name_kana"/>
+		            <input type="hidden" name="family_name_kana" value="<s:property value="family_name_kana"/>">
+		           </td>
+		          </td>
+		          
 		        </tr>
 		        <tr>
 		          <td>カナ（名）</td>
-		          <td><s:property value="last_name_kana"/></td>
+		          <td><s:property value="last_name_kana"/>
+		           <input type="hidden" name="last_name_kana" value="<s:property value="last_name_kana"/>">
+		          </td>
 		        </tr>
 		        <tr>
 		          <td>メールアドレス</td>
-		          <td><s:property value="mail"/></td>
+		          <td><s:property value="mail"/>
+		          <input type="hidden" name="mail" value="<s:property value="mail"/>">
+		          </td>
 		        </tr>
-		        <tr>
+		       <!--  <tr>
 		          <td>パスワード</td>
 		          <td><s:property value="password"/></td>
 		        </tr>
+		        -->
 		        <tr>
-		         <td>性別</td>
-		         <td>
-		         <s:property value="gender"/>
+		          <td>性別</td>
+		          <td>
+		             <s:property value="gender"/>
+		             <input type="hidden" name="gender" value="<s:property value="gender"/>">
 		         </td>
 		        </tr>
 		        <tr>
 		          <td>郵便番号</td>
-		          <td><s:property value="postal_code"/></td>
+		          <td>
+		            <s:property value="postal_code"/>
+		            <input type="hidden" name="postal_code" value="<s:property value="postal_code"/>">
+		          </td>
 		        </tr>
 		        <tr>
 		          <td>住所（都道府県）</td>
 		          <td>
-		          <s:property value="prefecture"/>
+		            <s:property value="prefecture"/>
+		            <input type="hidden" name="prefecture" value="<s:property value="prefecture"/>">
 		          </td>
 		        </tr>
 		        <tr>
 		          <td>住所（市区町村）</td>
-		          <td><s:property value="address_1"/></td>
+		          <td>
+		            <s:property value="address_1"/>
+		             <input type="hidden" name="address_1" value="<s:property value="address_1"/>">
+		          </td>
 		        </tr>
 		        <tr>
 		          <td>住所（番地）</td>
-		          <td><s:property value="address_2"/></td>
+		          <td><s:property value="address_2"/>
+		             <input type="hidden" name="address_2" value="<s:property value="address_2"/>">
+		          </td>
 		        </tr>
 		        <tr>
 		          <td>アカウント権限</td>
 		          <td>
 		            <s:property value="authority"/>
+		            <input type="hidden" name="authority" value="<s:property value="authority"/>">
 		          </td>
 		        </tr>
 		        <tr>
 		          <td><input type="button" value="前に戻る" onclick="history.back()"/></td>
-		          <td><input type="button" value="登録する" onclick="submitAction('UpdateCompleteAction')"/></td>
+		          <td>
+		          <input type="hidden" value='<s:property value="updateId"/>' name="updateId">
+		          <input type="button" value="登録する" onclick="submitAction('UpdateCompleteAction')"/>
+		          </td>
 		        </tr>
 		      </table>
 		  </s:form>
+		 アップデートId <s:property value="updateId"/>
 	   </div>
 	 </main>
  
