@@ -53,6 +53,19 @@
       <action name="UpdateCompleteAction" class="com.diworksdev.diblog.action.UpdateCompleteAction" method="execute">
       	<result name="success">update_complete.jsp</result>
       </action>
+      
+      <action name="UpdatePasswordAction" class="com.diworksdev.diblog.action.UpdatePasswordAction" method="execute">
+        <result name="success">update_password.jsp</result>
+      </action>
+      
+      <action name="PasswordConfirmAction" class="com.diworksdev.diblog.action.PasswordConfirmAction" method="execute">
+        <result name="success">password_confirm.jsp</result>
+        <result name="error">update_password.jsp</result>
+      </action>
+      
+      <action name="PasswordCompleteAction" class="com.diworksdev.diblog.action.PasswordCompleteAction" method="execute">
+        <result name="success">password_complete.jsp</result>
+      </action>
     </package>
     
 </struts>

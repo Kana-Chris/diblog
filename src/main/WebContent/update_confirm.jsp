@@ -125,7 +125,7 @@
 		        </tr>
 		      </table>
 		  </s:form>
-		 アップデートId <s:property value="updateId"/>
+		
 	   </div>
 	 </main>
  
