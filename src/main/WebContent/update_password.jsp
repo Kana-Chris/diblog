@@ -16,6 +16,7 @@
     </script>
   </head>
   <body>
+  
    <header>
         <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
         <nav class="mainNav">
@@ -30,23 +31,39 @@
               </ul>
           </nav>
       </header>
-      <h2 class="title">パスワード更新画面</h2>
-      
-      <s:if test='emptycheck=="1"'>
-        新しいパスワードを入力してください。
-      </s:if>
-      <form action="PasswordConfirmAction">
-      <table class="regist">
-        <tr>
-          <td>新しいパスワード</td>
-          <td><input type="text" name="password" value='<s:property value="password"/>'
-	      pattern="^[0-9A-Za-z]+$" maxlength="10" title="半角英数字で入力してください"/></td>
-       </tr>
-	  </table>
-	    <input type="hidden" value="<s:property value='updateId'/>" name="updateId"/>
-	    <input type="submit" value="確認する"/>
-	  </form>
+      <main>
+	      <h2 class="title">パスワード変更画面</h2>
+	      
+	      <s:if test='emptycheck=="1"'>
+	        <div style="margin-left:55vh;">
+	        新しいパスワードを入力してください。
+	        </div>
+	      </s:if>
+	      <form action="PasswordConfirmAction">
+	      <table class="regist">
+	        <tr>
+	          <td>新しいパスワード</td>
+	          <td><input type="text" name="password" value='<s:property value="password"/>'
+		      pattern="^[0-9A-Za-z]+$" maxlength="10" title="半角英数字で入力してください"/></td>
+	       </tr>
+	       <tr>
+	         <td colspan="2">
+	         <input type="hidden" value="<s:property value='updateId'/>" name="updateId"/>
+		     <input type="submit" value="確認する"/>
+		     </td>
+		   </tr>
+		  </table>
+		    
+		  </form>
+		  
+		  </main>
+	  
+	  <footer>
+            
+                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
+          
+    </footer>
   </body>
-
+   
 
 </html>

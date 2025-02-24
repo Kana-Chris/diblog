@@ -31,12 +31,8 @@
             </nav>
     </header>
     <h2 class="title">アカウント更新画面</h2>
-    <div class="regist">
-        パスワードを更新する場合は<s:form action="UpdatePasswordAction">
-        <input type="hidden" value='<s:property value="updateId"/>' name="updateId"/>
-        <input type="submit" value="こちら">
-        </s:form>
-        
+    
+      <main>
 	    <s:form action="UpdateConfirmAction">
 	      
 		    <table class="regist">
@@ -143,10 +139,18 @@
 	              <input type="submit" value="確認する"/>
 	            </td>
 	          </tr>
+	      
 	          </table>
+	        </s:form>
+	        <div style="margin-left:10%;">
+	       
+	              <s:form action="UpdatePasswordAction">
+                     <input type="hidden" value='<s:property value="updateId"/>' name="updateId"/>
+                     <input type="submit" value=" パスワードを更新する">
+                 </s:form>
+            </div>
+           </main>
 	        
-	      </s:form>
-	    </div>
     <footer>
             
               Copyright D.I.works| D.I.Blog is the one which provides A to A about programming

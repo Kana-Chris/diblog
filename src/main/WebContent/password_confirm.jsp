@@ -32,15 +32,17 @@
           </nav>
       </header>
     
-    <main>
-       <div>
-         
+    <main>  
+     <h2 class="title">パスワード変更確認画面</h2>
+        <div class="regist">
            <table>
              <tr>
-               <td>
+               <td colspan="2">
                パスワードを下記に変更します。
                </td>
-               <td>
+             </tr>
+             <tr>
+               <td colspan="2">
                <s:property value="password"/>
                </td>
              </tr>
@@ -68,6 +70,10 @@
        </div>
     
     </main>
-   
+    <footer>
+            
+                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
+          
+    </footer>
   </body>
 </html>

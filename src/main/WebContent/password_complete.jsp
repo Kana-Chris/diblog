@@ -5,8 +5,10 @@
 <html>
   <head>
   
-  <meta charset="UTF-8">
-  <title>Insert title here</title>
+    <meta charset="UTF-8">
+  　 <title>パスワード変更完了画面</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
   </head>
   <body>
     <header>
@@ -25,16 +27,31 @@
       </header>
     
     <main>
-       <div class="message">
+       <h2 class="title">パスワード変更完了画面</h2>
        
-       <s:property value="result_message"/>
-       
+       <div class="error">
+         <s:if test="result_message=='エラーが発生したためパスワード更新できません。">
+           <s:property value="result_message"/>
+         </s:if>
        </div>
-       <form>
-        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
-	  </form>
-	  
+      
+       <div class="message">
+          <s:if test="result_message=='パスワードを更新しました。'">
+            <s:property value="result_message"/>
+          </s:if>
+      </div>
+      
+      <div class="message">
+         <form>
+            <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
+	    </form>
+	 </div>
     </main>
-   
+    
+    <footer>
+            
+                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
+          
+    </footer>
   </body>
 </html>

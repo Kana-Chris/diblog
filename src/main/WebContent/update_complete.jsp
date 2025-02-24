@@ -16,36 +16,47 @@
     <title>アカウント更新完了画面</title>
   </head>
   <body>
-    <header>
-      <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
-      <nav class="mainNav">
-            <ul>
-                <li><a href='<s:url action="HomeAction"/>'>トップ</a></li>
-                <li>プロフィール</li>
-                <li>D.I.Blogについて</li>
-                <li>登録フォーム</li>
-                <li>問い合わせ</li>
-                <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
-                <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
-            </ul>
-      </nav>
-    </header>
-    <main>
-    <h2 class="title">アカウント更新完了画面</h2>
-    
-    <div class="confirm">
-   
-      <s:property value="message"/>
-      <form>
-        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
-	  </form>
-	  
+    <div class="height">
+	    <header>
+	      <div class="Logo"><img src="pic/diblog_logo.jpg"></div>
+	      <nav class="mainNav">
+	            <ul>
+	                <li><a href='<s:url action="HomeAction"/>'>トップ</a></li>
+	                <li>プロフィール</li>
+	                <li>D.I.Blogについて</li>
+	                <li>登録フォーム</li>
+	                <li>問い合わせ</li>
+	                <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
+	                <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
+	            </ul>
+	      </nav>
+	    </header>
+	    <main>
+		    <h2 class="title">アカウント更新完了画面</h2>
+		    
+		    <div class="error">
+		   	  <s:if test='message=="エラーが発生したためアカウント更新できません。"'>
+		        <s:property value="message"/> 
+		      </s:if>
+		    </div>
+		    <div class="message">  
+		      <s:if test='message=="更新完了しました"'>
+		         <s:property value="message"/>
+		      </s:if>
+		    </div>
+		       
+		    <div class="message">
+		      <form>
+		        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
+			  </form>
+		    </div>
+		    
+	    </main>
+	    <footer>
+	            
+	                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
+	          
+	    </footer>
     </div>
-    </main>
-    <footer>
-            
-                Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
-          
-    </footer>
   </body>
 </html>

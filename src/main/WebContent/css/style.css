@@ -1,6 +1,11 @@
 .Logo{
     display:block;
 }
+main{
+	min-height:59vh;
+}
+
+
 .mainNav{
     margin:0 auto;
     width:98%;
@@ -142,11 +147,21 @@ h2 .center{
 	height:400px;
 }
 
+.error{
+	margin:0 auto;
+	margin-top:10px;
+	width:80%;
+	text-align: center;
+	font-size: xx-large;
+	color:red;
+}
+
 .message{
 	margin:0 auto;
 	margin-top:10px;
 	width:80%;
 	text-align: center;
+	font-size: xx-large;
 }
 
 
