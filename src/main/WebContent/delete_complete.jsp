@@ -35,6 +35,17 @@
     <div class="confirm">
       <s:property value="message"/>
       
+            <div class="error">
+		   	  <s:if test='message=="エラーが発生したためアカウント削除できません。"'>
+		        <s:property value="message"/> 
+		      </s:if>
+		    </div>
+		    <div class="message">  
+		      <s:if test='message=="更新完了しました"'>
+		         <s:property value="message"/>
+		      </s:if>
+		    </div>
+      
      <form>
        <button onclick="submitAction('HomeAction')">TOPページに戻る</button>
     </form>
