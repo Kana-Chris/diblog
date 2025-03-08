@@ -30,38 +30,91 @@
                 </ul>
             </nav>
     </header>
+  <main>
     <h2 class="title">アカウント更新画面</h2>
-    
-      <main>
+      <div class="regist">
 	    <s:form action="UpdateConfirmAction">
-	      
+	    
 		    <table class="regist">
 		      <tr>
 		        <td>名前（姓）</td>
 		        <td><input type="text" name="family_name" value="<s:property value='family_name'/>"
 		        pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/></td>
 		      </tr>
+		      <s:if test="errorFlg==1">
+		    	<tr>
+		    	  <td colspan="2">
+        		    <s:if test="family_name==''">
+	        			<p class="red">名前（姓）が未入力です。<br></p>
+	        		</s:if>
+	        	 </td>
+         	    </tr>
+         	 </s:if>
+         	 
 	          <tr>
 	            <td>名前（名）</td>
 	            <td><input type="text" name="last_name" value="<s:property value='last_name'/>"  
 	            pattern="^[ぁ-んﾞﾟ一-龠ー]*$" maxlength="10" title="ひらがな、漢字で入力してください"/><td>
 	          </tr>
+              <s:if test="errorFlg==1">
+	           <tr>
+	             <td colspan="2">
+             	   <s:if test="last_name==''">
+        		      <p class="red">名前（名）が未入力です。<br></p>
+        		   </s:if>
+        		 </td>
+        	   </tr>
+              </s:if>
+              
 	          <tr>
 	            <td>カナ（姓）</td>
 	            <td><input type="text" name="family_name_kana" value="<s:property value='family_name_kana'/>"
 	            pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	          </tr>
+	          <s:if test="errorFlg==1">
+	           <tr>
+	             <td colspan="2">
+	               <s:if test="family_name_kana==''">
+        	  	   <p class="red">カナ（姓）が未入力です。<br></p>
+              	   </s:if>
+        		 </td>
+               </tr>
+              </s:if>
+            
 	          <tr>
 	            <td>カナ（名）</td>
    	            <td><input type="text" name="last_name_kana" value="<s:property value='last_name_kana'/>"
 	            pattern="[\u30A1-\u30F6]*" maxlength="10" title="全角カタカナで入力してください"/></td>
 	          </tr>
+	           <s:if test="errorFlg==1">
+	           <tr>
+	             <td colspan="2">
+             	   <s:if test="last_name_kana==''">
+        	         <p class="red">カナ（名）が未入力です。<br></p>
+                   </s:if>
+        	      </td>
+        	    </tr>
+              </s:if>
 	          <tr>
 	            <td>メールアドレス</td>
 	            <td><input type="text" name="mail" value="<s:property value='mail'/>"
 	            		pattern="^[a-zA-Z0-9\-]+([a-zA-Z0-9\-]+)*@([a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"  
 	          	    	maxlength="100"/></td>
 	          </tr>
+	           <s:if test="errorFlg==1">
+	            <tr>
+	              <td colspan="2">
+        	        <s:if test="mail==''">
+        	          <p class="red">メールアドレスが未入力です。<br></p>
+        	        </s:if>
+        	     </td>
+        	    </tr>
+         	  </s:if>
+         	  <tr>
+         	    <td>パスワード</td>
+	            <td>※パスワードは表示されません。
+	            </td>
+	          </tr> 
 	          <tr>
 	           <td>性別</td>
 	           <td>
@@ -83,6 +136,16 @@
 	            <td><input type="text" name="postal_code" value="<s:property value='postal_code'/>"
 	            pattern="[0-9]{7}" title="半角数字で入力してください"/></td>
 	          </tr>
+	            <s:if test="errorFlg==1">
+	             <tr>
+	               <td colspan="2">
+        	         <s:if test="postal_code==''">
+        	           <p class="red">郵便番号が未入力です。<br></p>
+        	         </s:if>
+        	       </td>
+        	     </tr>
+         	  </s:if>
+         	  
 	          <tr>
 	            <td>住所（都道府県）</td>
 	            <td>
@@ -106,16 +169,46 @@
 	            </select>
 	            </td>
 	          </tr>
+	          <s:if test="errorFlg==1">
+	          <tr>
+	           <td colspan="2">
+	              <s:if test="prefecture==''">
+	                <p class="red">都道府県が未選択です。</p>
+	              </s:if>
+	            </td>
+	          </tr>
+	        </s:if>
+	        
 	          <tr>
 	            <td>住所（市区町村）</td>
 	            <td><input type="text" name="address_1" value="<s:property value='address_1'/>"
 	            pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="10" title="ひらがな、カタカナ、漢字、数字、ハイフン（-）で入力してください"/></td>
 	          </tr>
+	          <s:if test="errorFlg==1">
+	           <tr>
+	             <td colspan="2">
+                   <s:if test="address_1==''">
+        	          <p class="red">住所（市区町村）が未入力です。<br></p>
+                   </s:if>
+          	     </td>
+        	   </tr>
+              </s:if> 
+	         
 	          <tr>
 	            <td>住所（番地）</td>
 	            <td><input type="text" name="address_2" value="<s:property value='address_2'/>"
 	            pattern="^[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-‐]+[ぁ-んァ-ヶｱ-ﾝ0-9０-９ﾞﾟ一-龠ー\-\s‐]*$" maxlength="100" title="ひらがな、カタカナ、漢字、数字、ハイフン（-)、スペースで入力してください"/></td>
 	          </tr>
+	           <s:if test="errorFlg==1">
+	           <tr>
+	             <td colspan="2">
+                  <s:if test="address_2==''">
+                    <p class="red">住所（番地）が未入力です。<br></p>
+                  </s:if>
+                 </td>
+               </tr>
+         	</s:if>
+         	
 	          <tr>
 	            <td>アカウント権限</td>
 	            <td>
@@ -150,7 +243,7 @@
                  </s:form>
             </div>
            </main>
-	        
+	  </div>      
     <footer>
             
               Copyright D.I.works| D.I.Blog is the one which provides A to A about programming

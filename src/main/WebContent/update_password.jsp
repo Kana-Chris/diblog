@@ -32,13 +32,9 @@
           </nav>
       </header>
       <main>
+        <div class="regist">
 	      <h2 class="title">パスワード変更画面</h2>
-	      
-	      <s:if test='emptycheck=="1"'>
-	        <div style="margin-left:55vh;">
-	        新しいパスワードを入力してください。
-	        </div>
-	      </s:if>
+	     
 	      <form action="PasswordConfirmAction">
 	      <table class="regist">
 	        <tr>
@@ -46,6 +42,15 @@
 	          <td><input type="text" name="password" value='<s:property value="password"/>'
 		      pattern="^[0-9A-Za-z]+$" maxlength="10" title="半角英数字で入力してください"/></td>
 	       </tr>
+	       <s:if test='emptycheck=="1"'>
+	         <tr>
+	           <td colspan="2">
+	             <p class="red">
+	             新しいパスワードを入力してください。
+	             </p>
+	           </td>
+	         </tr>
+	       </s:if>
 	       <tr>
 	         <td colspan="2">
 	         <input type="hidden" value="<s:property value='updateId'/>" name="updateId"/>
@@ -55,10 +60,10 @@
 		  </table>
 		    
 		  </form>
-		  
-		  </main>
+		</div>
+     </main>
 	  
-	  <footer>
+    <footer>
             
                 Copyright D.I.works| D.I.Blog is the one which provides A to A about programming
           

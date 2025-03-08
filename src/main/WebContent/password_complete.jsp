@@ -9,6 +9,12 @@
   　 <title>パスワード変更完了画面</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script type="text/javascript">
+    function submitAction(url){
+        $('form').attr('action',url);
+        $('form').submit();
+        }
+    </script>
   </head>
   <body>
     <header>

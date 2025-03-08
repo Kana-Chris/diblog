@@ -61,9 +61,8 @@ table th{
 
 .regist table{
 	margin:0 auto;
-	margin-top:3em;
 	margin-bottom:3em;
-	width:30%;
+	width:50%;
 	text-align: center;
 	border-collapse:collapse;
 }
@@ -167,4 +166,8 @@ h2 .center{
 
 .bottom{
 	margin-top:600px;
+}
+
+.red{
+	color:red;
 }
