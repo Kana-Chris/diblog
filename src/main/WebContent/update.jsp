@@ -134,7 +134,7 @@
 	          <tr>
 	            <td>郵便番号</td>
 	            <td><input type="text" name="postal_code" value="<s:property value='postal_code'/>"
-	            pattern="[0-9]{7}" title="半角数字で入力してください"/></td>
+	            pattern="[0-9]{7}" title="ハイフンなし半角数字で入力してください"/></td>
 	          </tr>
 	            <s:if test="errorFlg==1">
 	             <tr>
