@@ -69,17 +69,23 @@ public class UpdateCompleteDAO {
 			
 			update_result = preparedStatement.executeUpdate();
 		
+			try {
+				connection.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 			
+		}catch(NullPointerException e) {
+			update_result = 0;
+			return update_result;
 			
-		}catch(SQLException e) {
+		}catch(SQLException e) {  
+			e.printStackTrace();
+		}
+		catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		try {
-			connection.close();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
 		
 		return update_result;
 		
