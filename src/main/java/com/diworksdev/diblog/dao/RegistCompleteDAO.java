@@ -15,6 +15,7 @@ public class RegistCompleteDAO{
 	private int intAuthority;
 	private String hash;
 	
+	
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 	
@@ -64,16 +65,20 @@ public class RegistCompleteDAO{
 			
 			result = preparedStatement.executeUpdate();
 			
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-		finally {
-			try {
+			try {						//クローズ処理
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
+		}catch(NullPointerException e) {  //以下SQLにアクセスできない時の処理
+			result=0;
+			return result;
+		}catch(SQLException e) {		  //その他のエラー時
+			e.printStackTrace();
 		}
+			
+		
 		return result;
 	}
 }
