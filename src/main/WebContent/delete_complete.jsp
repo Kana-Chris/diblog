@@ -33,7 +33,7 @@
     <h2 class="title">アカウント削除完了画面</h2>
     
     <div class="confirm">
-      <s:property value="message"/>
+     
       
             <div class="error">
 		   	  <s:if test='message=="エラーが発生したためアカウント削除できません。"'>
@@ -41,7 +41,7 @@
 		      </s:if>
 		    </div>
 		    <div class="message">  
-		      <s:if test='message=="更新完了しました"'>
+		      <s:if test='message=="削除完了しました"'>
 		         <s:property value="message"/>
 		      </s:if>
 		    </div>

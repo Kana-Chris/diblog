@@ -16,15 +16,21 @@ public class DeleteDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, id);
 			result = preparedStatement.executeUpdate();
+			
+			try {
+				connection.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}catch(NullPointerException e) {
+			result = 0;
+			return result;
 		}catch(SQLException e) {
 			e.printStackTrace();
-		}
-		
-		try {
-			connection.close();
-		}catch(SQLException e) {
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
+
 		return result;
 	}
 }
