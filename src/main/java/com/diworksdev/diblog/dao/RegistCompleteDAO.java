@@ -28,6 +28,7 @@ public class RegistCompleteDAO{
 					  String postal_code,String prefecture,String address_1,
 					  String address_2,String authority){
 		
+		
 		if(gender.equals("男")) {
 			intGender = 0;
 		}else if(gender.equals("女")) {

@@ -36,18 +36,18 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 		
 		int daoResult;
 		daoResult =dao.regist(
-			(session.get("family_name")).toString(),
-			(session.get("last_name")).toString(),
-			(session.get("family_name_kana")).toString(),
-			(session.get("last_name_kana")).toString(),
-			(session.get("mail")).toString(),
-			(session.get("password")).toString(),
-			(session.get("gender")).toString(),
-			(session.get("postal_code")).toString(),
-			(session.get("prefecture")).toString(),
-			(session.get("address_1")).toString(),
-			(session.get("address_2")).toString(),
-			(session.get("authority")).toString()
+			family_name,
+			last_name,
+			family_name_kana,
+			last_name_kana,
+			mail,
+			password,
+			gender,
+			postal_code,
+			prefecture,
+			address_1,
+			address_2,
+			authority
 			);	
 		
 		if(daoResult==1) {
@@ -174,12 +174,13 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware{
 		this.messageFlg = messageFlg;
 	}
 	
-	
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
 	}
 	
-	
+	public Map<String,Object> getSession(){
+		return session;
+	}
 	
 	
 }

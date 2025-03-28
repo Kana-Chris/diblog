@@ -3,6 +3,7 @@ package com.diworksdev.diblog.dto;
 public class LoginDTO {
   private String mail;
   private String password;
+  private String authority;
   
   public void setMail(String mail) {
 	  this.mail=mail;
@@ -18,5 +19,13 @@ public class LoginDTO {
   
   public String getPassword() {
 	  return password;
+  }
+  
+  public void setAuthority(String authority) {
+	  this.authority = authority;
+  }
+  
+  public String getAuthority() {
+	  return authority;
   }
 }

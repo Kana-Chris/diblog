@@ -25,8 +25,10 @@
                     <li>D.I.Blogについて</li>
                     <li>登録フォーム</li>
                     <li>問い合わせ</li>
+                    <s:if test='#session.authority.equals("1")'> <!-- アカウント権限が一般(0)なら非表示、管理者(1)なら表示 -->
                     <li><a href='<s:url action="RegistAction"/>'>アカウント登録</a></li>
                     <li><a href='<s:url action="ListAction"/>'>アカウント一覧</a></li>
+                    </s:if>
                 </ul>
             </nav>
     </header>

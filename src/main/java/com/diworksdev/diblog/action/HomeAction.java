@@ -1,18 +1,24 @@
 package com.diworksdev.diblog.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.diworksdev.diblog.dao.LoginDAO;
 import com.diworksdev.diblog.dto.LoginDTO;
 import com.diworksdev.diblog.util.PassUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HomeAction extends ActionSupport{
-	
+public class HomeAction extends ActionSupport implements SessionAware{	
 	String result=ERROR;
 	private String mail;
 	private String password;
+	private String authority;
+	public Map<String,Object> session;
+	
 	public String execute() {
 		
-		
+		   //セッションがなければ作る
 		LoginDAO loginDAO = new LoginDAO();
 		LoginDTO loginDTO = new LoginDTO();
 		PassUtil passUtil = new PassUtil();
@@ -20,10 +26,14 @@ public class HomeAction extends ActionSupport{
 		loginDTO = loginDAO.login(mail);  
 		
 		String hash = passUtil.password_hash(password);
-		System.out.println(hash);
-		if(hash.equals(loginDTO.getPassword())){  //LoginDTOのパスワードはすでにハッシュ化されている
-			result = SUCCESS;
-		}
+		
+			if(hash.equals(loginDTO.getPassword())){   //パスワード一致ならindex.jspへ
+				result = SUCCESS;
+				session.put("authority", loginDTO.getAuthority());
+			}else {
+				result = ERROR;		                  //パスワード不一致ならlogin.jspへ
+			}
+		
 		
 		return result;
 		
@@ -43,5 +53,21 @@ public class HomeAction extends ActionSupport{
 	
 	public String getPassword() {
 		return password;
+	}
+	
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+	
+	public String getAuthority() {
+		return authority;
+	}
+	
+	public void setSession(Map<String,Object> session) {
+		this.session = session;
+	}
+	
+	public Map<String,Object> getSession(){
+		return session;
 	}
 }

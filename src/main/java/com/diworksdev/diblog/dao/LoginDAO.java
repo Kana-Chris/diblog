@@ -10,7 +10,7 @@ import com.diworksdev.diblog.util.DBConnector;
 
 
 public class LoginDAO {
-  private String sql="SELECT password FROM user_info WHERE mail=?";
+  private String sql="SELECT password,authority FROM user_info WHERE mail=?";
   LoginDTO loginDTO = new LoginDTO();
   DBConnector dbconnector = new DBConnector();
   
@@ -25,6 +25,7 @@ public class LoginDAO {
 			if(rs.next()) {
 				
 				loginDTO.setPassword(rs.getString("password"));
+				loginDTO.setAuthority(rs.getString("authority"));
 			}
 			
 	  }catch(SQLException e) {
