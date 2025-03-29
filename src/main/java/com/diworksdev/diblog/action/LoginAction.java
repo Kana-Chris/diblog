@@ -10,12 +10,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String result;
 	
 	public String execute() {
-		if(session==null) {
-			result=ERROR;
-		}else if(session!=null) {
-			result=SUCCESS;
-		}
-		
+	
+		result=SUCCESS;
+			
 		return result;
 		
 	}

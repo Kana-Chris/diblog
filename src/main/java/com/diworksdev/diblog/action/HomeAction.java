@@ -18,7 +18,10 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	
 	public String execute() {
 		
-		   //セッションがなければ作る
+		if(session.containsKey("authority")) {
+			result = SUCCESS;
+			
+		}else if(!session.containsKey("authority")) {
 		LoginDAO loginDAO = new LoginDAO();
 		LoginDTO loginDTO = new LoginDTO();
 		PassUtil passUtil = new PassUtil();
@@ -30,11 +33,12 @@ public class HomeAction extends ActionSupport implements SessionAware{
 			if(hash.equals(loginDTO.getPassword())){   //パスワード一致ならindex.jspへ
 				result = SUCCESS;
 				session.put("authority", loginDTO.getAuthority());
+				
 			}else {
-				result = ERROR;		                  //パスワード不一致ならlogin.jspへ
+				result = ERROR;		                   //パスワード不一致ならlogin.jspへ
 			}
 		
-		
+		}
 		return result;
 		
 	}
