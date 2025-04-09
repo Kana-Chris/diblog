@@ -20,12 +20,15 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	private String address_2;
 	private String authority;
 	
+	private int errorFlg;  
 	
 	public String execute() {
 		
 		String result = SUCCESS;
+		
 		return result;
 			
+	
 	}
 	
 	public void setSession(Map<String,Object> session) {
@@ -126,5 +129,13 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	
 	public void setAuthority(String authority) {
 		this.authority = authority;
+	}
+	
+	public void setErrorFlg(int errorFlg) {
+		this.errorFlg = errorFlg;
+	}
+	
+	public int getErrorFlg() {
+		return errorFlg;
 	}
 }
