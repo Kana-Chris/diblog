@@ -17,7 +17,7 @@ public class UpdateCompleteDAO {
 			+ "update_time=? WHERE id = ?";
 	
 	DateUtil dateUtil = new DateUtil();
-	public int update_result;
+	public int update_result=0;
 	private int int_gender;
 	private int int_postal_code;
 	private int int_authority;
@@ -69,24 +69,22 @@ public class UpdateCompleteDAO {
 			
 			update_result = preparedStatement.executeUpdate();
 		
-			try {
-				connection.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
-			
-		}catch(NullPointerException e) {
-			update_result = 0;
-			return update_result;
 			
 		}catch(SQLException e) {  
-			e.printStackTrace();
+			update_result = 0;
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+		finally {
+			if(connection!=null) {
+				try {
+					connection.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		return update_result;
 		
 	}

@@ -1,4 +1,5 @@
 package com.diworksdev.diblog.action;
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -22,7 +23,7 @@ public class UpdateCompleteAction extends ActionSupport implements SessionAware{
 	private String authority;
 	private String message;
 	
-	public String execute() {
+	public String execute() throws SQLException{
 	UpdateCompleteDAO updateDAO = new UpdateCompleteDAO();
 	int daoResult;
 
@@ -44,7 +45,7 @@ public class UpdateCompleteAction extends ActionSupport implements SessionAware{
 		setMessage("更新完了しました");
 	}
 	
-	else {
+	else if(daoResult==0){
 		setMessage("エラーが発生したためアカウント更新できません。");
 	}
 		

@@ -66,11 +66,7 @@ public class RegistCompleteDAO{
 			
 			result = preparedStatement.executeUpdate();
 			
-			try {						//クローズ処理
-				connection.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			
 			
 		}catch(NullPointerException e) {  //以下SQLにアクセスできない時の処理
 			result=0;
@@ -78,8 +74,14 @@ public class RegistCompleteDAO{
 		}catch(SQLException e) {		  //その他のエラー時
 			e.printStackTrace();
 		}
-			
 		
+		finally {	
+			try {						//クローズ処理
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return result;
 	}
 }

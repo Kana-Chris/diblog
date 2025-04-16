@@ -63,12 +63,15 @@ public class ListDAO {
 			e.printStackTrace();
 		}
 		
-		try {
-			connection.close();
-		}catch(SQLException e) {
-			e.printStackTrace();
+		finally {
+			if(connection!=null) {
+				try {
+					connection.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		
 		return accountList;
 	}
 }
