@@ -12,7 +12,7 @@
     function submitAction(url){
         $('form').attr('action',url);
         $('form').submit();
-        }
+    }
     </script>
   </head>
   
@@ -52,8 +52,9 @@
       <s:form>
         <button onclick="submitAction('HomeAction')">TOPに戻る</button>
       </s:form>   
+      </div>
     </main>
-    </div>
+    
     
     <footer class="bottom">
             

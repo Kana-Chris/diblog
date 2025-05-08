@@ -1,4 +1,5 @@
 package com.diworksdev.diblog.action;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,11 +21,12 @@ public class ListAction extends ActionSupport implements SessionAware{
 	private String mail;
 	private String gender;
 	private String authority;
+	private int errorFlag=0;
 	
 	private Map<String,Object> session;
 	
 	
-	public String execute() {
+	public String execute() throws SQLException {
 		if(family_name!=null&&
 			last_name!=null&&
 			family_name_kana!=null&&
@@ -38,6 +40,9 @@ public class ListAction extends ActionSupport implements SessionAware{
 									  gender,
 									  authority);
 		
+		}
+		if(searchDAO.getErrorFlag()==1) {
+			errorFlag=1;
 		}
 		String result=SUCCESS;
 		return result;
@@ -111,5 +116,13 @@ public class ListAction extends ActionSupport implements SessionAware{
 	
 	public List<SelectDTO> getSearchList(){
 		return searchList;
+	}
+	
+	public int getErrorFlag() {
+		return errorFlag;
+	}
+	
+	public void setErrorFlag(int errorFlag) {
+		this.errorFlag = errorFlag;
 	}
 }

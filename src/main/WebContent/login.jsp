@@ -30,6 +30,8 @@
         
         <h2 class="title">ログイン画面</h2>
         <div class="regist">
+        	<s:if test="errorFlag==1">パスワードまたはメールアドレスが間違っています</s:if>
+            <s:if test="errorFlag==2"><div style="color:red;">エラーが発生したためログイン情報を取得できません。</div></s:if>
             <table>
               <tbody>
                 <s:form action="HomeAction">
@@ -50,6 +52,7 @@
                   </tr>
                   <tr>
                     <td colspan="2">
+                      <input type="hidden" name="login_flag" value="1"/>
                       <input type="submit" value="ログイン"/>
                     </td>
                   </tr>               

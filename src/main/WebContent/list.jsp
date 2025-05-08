@@ -9,7 +9,12 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
-      
+      <script type="text/javascript">
+        function submitAction(url){
+            $('form').attr('action',url);
+            $('form').submit();
+        }
+    </script>
   </head>
   
   <body>
@@ -35,13 +40,29 @@
     <s:if test='#session.authority==null'>
       　　<div class="error">
           エラーのため操作できません。
+          <form>
+                <div class="message">
+                   	<button onclick='submitAction("LoginAction")'>TOPに戻る</button>
+                </div>
+         </form>
         </div>
+        
       </s:if>
-    <s:if test='#session.authority.equals("0")'>
+          <s:if test='#session.authority.equals("0")'>
       <div class="error">
          エラーのため表示できません。
+         <form>
+             <div class="message">
+                 <button onclick='submitAction("HomeAction")'>TOPに戻る</button>
+             </div>
+        </form>
       </div>
     </s:if>
+        <div class="error">
+           <s:if test='errorFlag==1'>
+           エラーが発生したためアカウント情報を取得できません。
+           </s:if>
+        </div>
     <s:if test='session.authority.equals("1")'>
 	      <form action="ListAction">
 	       <table>

@@ -237,13 +237,13 @@
 	      
 	          </table>
 	        </s:form>
-	        <div style="margin-left:10%;">
+	        
 	       
 	              <s:form action="UpdatePasswordAction">
                      <input type="hidden" value='<s:property value="updateId"/>' name="updateId"/>
                      <input type="submit" value=" パスワードを更新する">
                  </s:form>
-            </div>
+            
            </main>
 	  </div>      
     <footer>

@@ -38,13 +38,13 @@
        <h2 class="title">パスワード変更完了画面</h2>
        
        <div class="error">
-         <s:if test="result_message=='エラーが発生したためパスワード更新できません。">
+         <s:if test="daoresult==0">
            <s:property value="result_message"/>
          </s:if>
        </div>
       
        <div class="message">
-          <s:if test="result_message=='パスワードを更新しました。'">
+          <s:if test="daoresult==1">
             <s:property value="result_message"/>
           </s:if>
       </div>
