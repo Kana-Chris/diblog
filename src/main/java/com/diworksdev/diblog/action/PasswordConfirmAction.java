@@ -1,7 +1,12 @@
 package com.diworksdev.diblog.action;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class PasswordConfirmAction extends ActionSupport{
+public class PasswordConfirmAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
 	private String result;
 	private String password;
 	private String updateId;
@@ -37,5 +42,12 @@ public class PasswordConfirmAction extends ActionSupport{
 	}
 	public int getEmptycheck() {
 		return emptycheck;
+	}
+	
+	public void setSession(Map<String,Object> session) {
+		this.session = session;
+	}
+	public Map<String,Object> getSession(){
+		return session;
 	}
 }

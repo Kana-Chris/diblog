@@ -1,10 +1,14 @@
 package com.diworksdev.diblog.action;
 import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.diworksdev.diblog.dao.PasswordDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class PasswordCompleteAction extends ActionSupport{
+public class PasswordCompleteAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
 	private int daoresult;
 	private String password;
 	private String updateId;
@@ -51,5 +55,12 @@ public class PasswordCompleteAction extends ActionSupport{
 	}
 	public int getDaoresult() {
 		return daoresult;
+	}
+	
+	public void setSession(Map<String,Object> session) {
+		this.session = session;
+	}
+	public Map<String,Object> getSession(){
+		return session;
 	}
 }

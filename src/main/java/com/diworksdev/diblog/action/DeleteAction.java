@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DeleteAction extends ActionSupport implements SessionAware{
 	
 	private String deleteId;
-	private Map<String,Object> session;
+	public Map<String,Object> session;
 	SelectDAO selectDAO = new SelectDAO();
     private SelectDTO selectDTO;
 	
